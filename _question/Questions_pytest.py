@@ -1,11 +1,11 @@
 # conftest
 
-a/conftest.py:
+conftest.py:
     def pytest_runtest_setup(item):
         # called for running each test in 'a' directory
         print ("setting up", item)
 
-a/test_sub.py:
+test_sub.py:
     def test_sub():
         pass
 
