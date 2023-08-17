@@ -1,0 +1,11 @@
+a = list()
+x = a
+x.append(2)
+x.append(1)
+x.append(0)
+# x.sort()
+a = sorted(a)
+# x = sorted(x)
+print(x, 'x variable')
+print(a, 'a variable')
+print(type(a))

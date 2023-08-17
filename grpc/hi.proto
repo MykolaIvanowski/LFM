@@ -1,0 +1,33 @@
+syntax="proto3";
+package hi;
+
+service Hi{
+
+    rpc SayHi(HiRequest) returns (HiReply);
+
+    rpc SayHello(HelloRequest) returns (HelloReply);
+
+    rpc AnotherSayHi(HiRequest) returns (HiReply);
+}
+
+message HelloReply {
+  string message_hello = 1;
+  int32 greeting_number = 2;
+  int32 result_per_hi = 3;
+}
+message HiReply{
+    string reply = 1;
+    int32 greeting_number = 2;
+    int32 result_per_hi = 3;
+}
+message HiRequest{
+    string message_hi = 1;
+    int32 greeting_number = 2;
+      int32 result_per_hi = 3;
+}
+
+message HelloRequest{
+    string hello_request = 1;
+    int32 greeting_number = 2;
+    int32 result_per_hi = 3;
+}
