@@ -1,0 +1,97 @@
+kafka?
+це меседж кю який може стрімити дані, меседжіюйог можна розбити на кластер.
+
+how to set up kafka?
+як бачиш потрібно засетати, кафку, зукіпер, консюмера, і продюсера
+
+> tar -xzf kafka_2.11-2.0.0.tgz
+> cd kafka_2.11-2.0.0
+> bin/zookeeper-server-start.sh config/zookeeper.properties
+> bin/kafka-server-start.sh config/server.properties
+create topic
+> bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+> bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+send message
+> bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+This is a message
+This is another message
+
+start consumer
+> bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+This is a message
+This is another message
+
+set up multiple broker
+> cp config/server.properties config/server-1.properties
+> cp config/server.properties config/server-2.properties
+
+
+
+produser - апка, іот, бд , будь що по продукує дані для кафки
+consumer - це апп, сервіс, база, верхаус, будб що що поглинає дані з кавфки
+broker - це кафка сервер
+cluster - кафку можна організувати не тільки інстансом а й зробити кафка кластер.
+topic - це унікальне імя для кафка стріму (у топік шлються меседжи)
+partitions - розділення топіків, тобто їх можна організовувати у групи топіків по ключам (якись кастомер),
+а також партишені можуть бути на різних нодах. Топіки з певними ключаси попадуть до певних партишенів
+а далі до певних консюмерів
+offset - порядковий номер меседжа (топіка)
+consumer group - Групи споживачів дозволяють консюмерам Kafka працювати разом і обробляти події з топіка паралельно.
+Це група консюмерів яка може процювати на одною таскою складеною з різних топіків.
+Тобто визначені топіки прямують то групи консюмерів.
+
+кафка не дозволяє більше двох консьмерів для читання з одного партишена одночасно
+Наприклад, у вас може бути 5 споживачів, які працюють із group.id=invoice-emails, і вони спільно працюватимуть;
+в той же час один споживач може читати ті самі події з однієї топік за допомогою group.id=sales-analytics,
+і це буде працювати абсолютно незалежно.
+ч
+
+simple mq vs kafka?
+пристий меседжкю часто не гарантує порядок віддачі топіків.
+
+is kafka send topic in the same queue?
+так кафка гарантує що ордер буде той самий у який було складено.
+Якщо топіки у партишені то кафка гарантує порядок віддачі топіків які обробляються у партишені
+(але не між партишенами)
+
+Zookeper
+по сті помагає контролбвати ноди на клестері кафка.
+Zookeeper відстежує стан вузлів кластера Kafka, а також теми Kafka, розділи тощо. . Якщо нода з якоїсь причини вимикається, контролер несе відповідальність за те, щоб наказати всім реплікам діяти як керівники розділів, щоб виконувати обов’язки лідерів розділів на ноді, який збирається вийти з ладу. щоразу, коли вузол вимикається, можна вибрати нового контролера, що в будь-який момент часу є лише один контролер.
+
+fault tolerance?
+yes
+
+
+how to use kafka?
+маштабування запитів,
+стрімінг даних,
+якась таска яка приходить по черзі
+(нагадує лоад балансер, правба з багатьма фічами,звісно це не так але кафка може зіграти таку роль)
+
+case1
+Припустімо, що наша програма має 10 мільйонів користувачів, і ми хочемо записувати дії користувачів (наведення, переміщення, бездіяльність тощо) кожні 5 секунд. Це створить 120 мільйонів подій дій користувача за хвилину. У цьому випадку нам не потрібно повідомляти користувача, що ми успішно обробили інформацію про його дії. Щоб відповісти на 120 мільйонів запитів за хвилину, нам знадобиться кілька серверів, на яких запущено копії вашої програми. Як ви це вирішите?
+
+case2
+     Скажімо, одній із наших програм потрібно надіслати повідомлення трьом іншим програмам. У цьому випадку припустимо, що програмі, яка надсилає повідомлення, не потрібно знати, чи було оброблено повідомлення. Як ви це вирішите?
+
+Рішення для випадку 1
+
+Ми надсилатимемо 120 мільйонів повідомлень на хвилину в топік, скажімо, подію дії користувача з вашого клієнта користувача (веб-браузера), і ви зможете надати програмам-виробникам зчитувати їх у власному темпі обробки.
+Рішення для випадку 2
+
+Ми змусимо нашу програму-виробника надсилати повідомлення до топік, скажімо, подій кількох програм, тоді всі 3 програми зможуть читати з цієї топіка. Це зменшує навантаження на виробника, оскільки він піклується лише про надсилання повідомлень.
+
+
+
+    Let’s assume our application has 10Million users and we want to record user actions(hover, move, idle, etc) every 5 seconds. This will create 120Million user action events per minute. In this case we don’t have to make the user aware that we have successfully processed their action information. To respond to 120Million requests per minute, we will need multiple servers running copies of your application. How will you solve this?
+
+    Let’s say one of our applications need to send a message to 3 other applications. In this case assume the application that sends the message does not need to know if the message was processed. How will you solve this?
+
+Solution for case 1
+We will send 120Million messages per minute into a Topic lets say user-action-event from the your user client(web browser) and you can have your producer applications read from them at their own pace of processing.
+
+Solution for case 2
+We will have our producer application send messages to a Topic lets say multi-app-events then all the 3 applications can read from this topic. This reduces the burden on the producer as it only cares about sending the messages.
+
+

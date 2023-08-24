@@ -1,0 +1,7 @@
+ps aux | grep " node " # знайти інфу процеса node
+psql     # go to postgres connection
+how to check port
+kill process
+How to read file in real time in Linux?
+Linux: kill all python processes.
+

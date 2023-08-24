@@ -1,0 +1,28 @@
+# KISS - keep it simple stupid
+
+# DRY - don`t repeat yourself
+
+#YAGNI You Aren't Going to Need It
+# процес і принцип проектування, при якому як основна мета та / або цінність
+# декларується як відмова від додавання функціональності, в якій немає безпосередньої потреби
+
+# GRASP General Responsibility Assignment Software Patterns
+# До складу шаблонів GRASP входить 9 шаблонів:
+    # Information Expert
+    # Creator
+    # Low Coupling
+    # High Cohesion
+    # Controller
+    # Polymorphism
+    # Pure Fabrication
+    # Indirection
+    # Protected Variations
+
+# SOLID
+
+Single responsibility principle
+Open/closed principle
+Liskov substitution principle
+Interface segregation principle
+Dependency inversion principle
+.

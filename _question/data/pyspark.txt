@@ -1,0 +1,73 @@
+SparkContext vs SparkSession?
+
+Що таке Shuffling?
+
+DataFrame vs. RDD in PySpark?
+
+partitions?
+
+Broadcasting?
+
+Map vs FlatMap ?
+
+How Lazy Evaluation Works in PySpark?
+
+What is PySpark Accumulator?
+
+PySpark Repartition() vs Coalesce()
+
+textFile vs wholeTextFiles
+
+groupBy?
+
+joins in pyspark, join two diffrent file?
+
+Outer Join,Inner Join, Right Join, Left Join, Right Join, Left Semi Join, Left Anti Join,Cross Join:
+
+create temp table, view?
+
+pivot?
+
+parallelize()
+
+rename column?
+
+withColumn?
+
+slect?
+
+filter, where?
+
+collect () vs select ()
+
+distinct() vs dropDuplicates()
+
+orderBy() and sort()
+
+Union and UnionAll
+
+unionByName
+
+foreach
+
+use sql vs DataFrame API?
+
+save in parqute ... etc?
+
+sample vs sampleBy?
+
+fillna() & fill()
+
+partitionBy?
+
+
+option, .option("header", True) ?
+
+appNam?
+
+max, min avarege?
+
+read diffrend file parqute, csv, avro?
+
+PySpark DataFrames vs. Pandas DataFrames
+

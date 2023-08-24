@@ -1,0 +1,35 @@
+Difference beet Hadoop and Spark?
+What is Data life cycle?
+Variety, Velocity, Volume of bigdata?
+What are the key differences between BigQuery and PostgreSQL in terms of architecture and data management?
+What are the key differences between Redshift and PostgreSQL in terms of architecture and data management?
+What is OLAP ?
+Does Spark use MapReduce internally?
+Hadoop distributive?
+Haoop?
+HDFS?
+RDD (Resilient Distributed Dataset)
+DataFrame?
+DataSet?
+False tolerance?
+YARN?
+MapReduce?
+Pyspark?
+Hive? (Datawerhouse)
+Master Node?
+Worker Node?
+Name Node?
+workflow in pyspark?
+SparkSession?
+Data streaming
+Vs of bigdata?
+Data lifecycle?
+data lake vs data werhouse vs data mart?
+panda vs pyspark?
+sharding vs partitioning?
+map shaflle reduce?
+підходи при роботі з пайплайнами?
+Hadoop vs Pyspark
+ETL vs ELT?
+архтектурні підходи?
+DAG?

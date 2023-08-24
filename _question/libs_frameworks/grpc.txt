@@ -1,0 +1,4 @@
+grpc це?
+http 1 vs http2
+основна ідея grpc?
+

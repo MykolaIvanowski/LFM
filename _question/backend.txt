@@ -1,0 +1,32 @@
+how to solve SSRF?
+SAST vs. DAST: What’s the best method for application security testing?
+http це?
+
+що таке хедер?
+що таке боду?
+як передається?
+як Читається?
+* http1,http2,http3?
+
+* якщо меседж передається шифрованим то це як?
+
+* де токени зберігаються?
+
+* максимальна, мінімальна кількість даних при передачі?
+
+
+* архітектурні стилі?
+    SOAP
+    RESTful
+    GraphQl (архітектурний стиль та query language)
+    gRPC
+    WebSocket
+    WebHook
+
+
+what is SaaS?
+What is PaaS?
+IaaS
+FaaS
+SolaaS solution as aservise
+

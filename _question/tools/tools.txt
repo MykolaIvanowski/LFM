@@ -1,0 +1,71 @@
+
+           databricks
+databricks це лейкхаус платформа яка позволяє працювати з даними.
+можна заюзати на AWS, GCP, Azure
+lakehouse?
+Інтеграція відбувається через датабгікс акаунт з певним клаудом.
+Що можна робити?
+альтернативи?
+
+
+    *****
+what is elasticsearch?
+elastic tools (elastic stack)?
+kibana, elasticsearch, logstash(beats), X-Pack
+
+
+kibana?
+logstash(beats)?
+X-Pack?
+indexing in elastic?
+where store index?
+communication with elastic?
+що можна робити ?
+шардінг у еластк?
+як працює індекс у elasticsearch?
+Є два варіанти інвертованого індексу:
+
+    індекс, який містить лише список документів для кожного слова,
+    індекс, додатково включає позицію слова в кожному документу
+
+
+
+   ***
+what is EMR and how to use it?
+what is airflow and how to use it?
+
+   ***
+flink ?
+Flink depends on the following libraries to execute the above script:
+дашборд?
+@udf?
+User defined function
+деплоїться?
+конкуренти?
+
+        ***
+
+redis-server # start resis server
+redis-cli    # open redis console
+Redis hashes
+які е типи у редіc?
+python redis
+redis pool
+how to use redis?
+
+
+            ***
+tableau - це
+як розгортається?
+куди конектиться таблоо?
+табло з яким типом даних краще працює?
+joins tabloeu
+tabloeu платний?
+з якими файлами табло може працювати?
+альтернативи?
+            ***
+
+what is splunk?
+команди спланк?
+What kind of data?
+як юзати?
