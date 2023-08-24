@@ -1,0 +1,18 @@
+Ще важливо розуміти що часто кажуть що Hadoop є екосистемою( у яку входить Spark)
+Що таке екосистема Hadoop?
+Що таке HDFS?
+Що таке MapReduce?
+Що таке Hive?
+Що таке Apache Pig?
+Map Reduce - Hadoop
+Що таке YARN?
+Що таке Apache Spark?
+
+What is the Hadoop Ecosystem?
+What is MapReduce?
+What is HDFS?
+What is Hive?
+What is Apache Pig?
+What is MapReduce?
+What is YARN?
+What is Apache Spark?

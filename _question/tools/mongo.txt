@@ -1,0 +1,27 @@
+що таке mongodb?
+Що таке колекція у монго?
+Що таке документ у монго?
+Корокто про структуру?
+що таке індекс?
+якіпереваги у використанні монго?
+how to create collection?
+how to insert?
+how to get?
+what is $lt,$gt ?
+$lt - lower than менше ніж (<)
+$gt - greater than більше ніж  (>)
+$eq: - value of a field equals the specified value (==)
+$gte - field is greater than or equal to ( >= )
+$lte - field is less than or equal to ( <= )
+$in - вибирає документи, у яких значення поля дорівнює будь-якому значенню в указаному масиві.
+	приклад { field: { $in: [<value1>, <value2>, ... <valueN> ] } }
+$ne - is not equal (!=)
+$nin -  select the field value is not in the specified array or the field does not exist.
+what is $set?
+how to update?
+updateOne vs replaceOne?
+how to delete?
+how to create index?
+what is .explain('execytionStats')?
+де не дуже монго?
+Where MongoDB would not be well suited ?

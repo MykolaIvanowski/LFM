@@ -1,0 +1,68 @@
+1. Can you ping a specific port of a machine? Why?
+
+2. Routing between two machines with router in between
+
+3. Difference between routing and switching
+
+4. How DNS resolution is done
+
+5. TCP/UDP vs ICMP? Transport layer vs Internet layer?
+
+6. DNS zone file?
+
+7. Internet protocol suite(TCP/IP stack) vs OSI model?
+
+8. TCP vs UDP
+
+
+Що таке мережева модель osi?
+
+
+Application layer - Прикладний рівень  (дані)
+Presentation layer - Представлення рівень (дані)
+Session layer - Сеансовий рівень (дані)
+Transport layer - Транспортний рівень (оперує сегментами, датаграммами)
+Network layer - Мережевий рівень (оперує пакетами)
+Data link layer - Канальний рівень (оперує фреймами)
+Physical layer - Фізичний рівень (оперує бітами)
+
+***
+Що таке фрейм?
+Що таке РРР?
+Що таке РРРоЕ?
+Різниця IPv4, IPv6?
+що таке unicode?
+Що таке XML?
+TCP,
+UDP
+SSL
+TLS
+SOCKS
+HTTP
+HTTPS
+Telnet
+SMTP
+FTP
+SSH,
+POP3
+DHCP
+DNS
+
+ports   tcp/udp   protocol
+22 	TCP 	  SSH, SFTP і SCP
+25 	TCP 	  SMTP
+53 	TCP/UDP   DNS
+80 	TCP 	  HTTP
+110 	TCP 	  POP3
+443 	TCP 	  Secure Sockets Layer (SSL або HTTPS)
+465 	TCP 	  Надсилання повідомлень для програми «Пошта» (SMTP з автентифікацією)
+587 	TCP 	  Надсилання повідомлень для програми «Пошта» (SMTP з автентифікацією)
+
+
+модель tcp/ip
+
+Application layer - Прикладний рівень
+Transport layer - Транспортний рівень
+Network layer - Мережевий рівень
+link layer - Канальний рівень
+

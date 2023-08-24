@@ -1,0 +1,63 @@
+
+join, select, transaction (with PK FK and without if it possible)
+
+create db
+    one to one,
+    many to many,
+    one to many
+
+how to dump sql db (can use this dump)
+create index in db (how it update with index)
+
+# Що таке ACID?
+
+Atomicity — Атомарність
+Consistency — Узгодженість
+Isolation — Ізольованість
+Durability — Довговічність
+
+sharding vs partitioning?
+cluster table
+Вигоди/мінуси clustering
+ціль партишенінгу?
+Стратегія розбиття при шардінгу партишенінг? (їх є багато)
+
+
+Dirty reads
+Non-repeatable reads
+Phantom reads
+Втрачене оновлення (Serialization Anomaly)
+
+
+Рівень ізоляції / Фантомне читання/ Неповторюване читання /«Брудне» читання / Втрачене оновлення
+SERIALIZABLE 	        +               	+                   	+ 	              +
+REPEATABLE READ 	    - 	                + 	                    + 	              +
+READ COMMITTED 	        -       	        - 	                    + 	              +
+READ UNCOMMITTED 	    - 	                - 	                    - 	              +
+
+Read uncommitted (читання незафіксованих даних)
+Read committed (читання фіксованих даних)
+Repeatable read (повторюваність читання)
+Serializable (впорядкованість)
+
+
+Нормалізація 6 нормальних форм, бойса-кодда, ключ-домен.
+
+Перша нормальна форма
+Друга нормальна форма
+Третя нормальна форма
+
+кластерний не кластерний індекс?
+triger?
+function vs stored proccedure?
+
+
+no relation database?
+key - value db (Redis)
+wide column  (cassandra, HBase)
+document (mongodb, firestore, dimanodb, couchdb)
+graph (Neo4j,FlockDB,Apache Giraph)
+Search engine db (elasticsearch, meilisearch, algolia, Apache Lucene)
+Object database? (Realm)
+multi model db?
+vector db?

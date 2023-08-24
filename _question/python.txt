@@ -1,0 +1,71 @@
+протокол серіалізатор
+What do the python file extensions, .pyc .pyd .pyo stand for?
+colection
+functоlls
+itertolls
+generator
+обєднати два ліста, обєднати два словника
+
+diamond problem?
+diffrence bettween python 2 and 3 version?
+What is python?
+Definition of the language.
+Different python implementations
+Static/Dynamic vs Strong/Weak typing
+Duck typing
+Base memory management
+Heap vs Stack
+Standard python types
+(None, Numbers, Sequences, Mapping, Sets, Callable,  Modules, Classes, Types, FIles)
+Array vs Linked list
+Sets (methods, immutable members)
+Dicts (keys)
+del operation (variables, lists, dicts)
+List (del vs remove vs pop)
+Modules sys vs os
+Tuple decompose (x, y = y, x)
+range vs xrange
+Mutable vs Immutable types
+hash method
+__hash__ vs __eq__
+Context manager
+__enter__
+__exit__
+Iterators vs Generators
+yield
+send method
+Static vs class vs instance methods
+lambda functions (anonymous)
+Magic methods
+Classes
+__call__
+__new__
+__init__
+Private and public methods
+_method
+__method (instance._Class__method)
+Multiple inheritance
+Method resolution order
+Class.__mro__
+Descriptors
+__get__, __set__, __delete__
+@property
+__slots__
+faster attribute access.
+space savings in memory.
+
+Old Style Classes vs New style classes
+Old (there are not types only instances)
+New
+super
+MRO
+Descriptors
+Slots
+Cannot be raised as Exception
+Metaclasses
+type(<name>, <bases>, <dict>)
+GIL
+Patterns, SOLID, REST
+Functional vs OOP programming
+Thread vs async?
+mutex vs semaphore?

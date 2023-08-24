@@ -1,0 +1,5 @@
+які є інструменти для сі/cd?
+Безперервна інтеграція (CI)
+Безперервна доставка (CD)
+який флов у ci/cd?
+Continuous delivery vs. continuous deployment?

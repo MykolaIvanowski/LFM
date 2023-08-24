@@ -1,0 +1,396 @@
+a = 1
+b = 2
+<in one line>
+print a, b
+2 1
+
+================================================================================
+
+x = {'a': 'b', 'i': None, 'j': 1}
+
+print(x.get('i'))
+print(x.get('i', 'AAAA'))
+print(x.get('i', 'AAAA') or "BBB")
+print(x.get('z') or "BBB")
+print(x['key'] or "BBB")
+
+================================================================================
+
+for i in range(3):
+    if i == 3:
+        break
+    print(i)
+else:
+    print(3)
+
+================================================================================
+
+x = 1
+print(["Foo", "Bar"][x == '1'])
+
+
+
+================================================================================
+
+def f(x,l=[]):
+    for i in range(x):
+        l.append(i*i)
+    print(l)
+
+f(2)
+f(3,[3,2,1])
+f(3)
+
+================================================================================
+
+
+x = []
+z = '',
+
+if True and (not False or True) and x:
+    print("A")
+elif False or True and False:
+    print("B")
+elif True and z:
+    print("C")
+else:
+    print("D")
+
+================================================================================
+
+f = 2
+
+def foo():
+    print f
+    <what is printed>
+    <change f value>
+
+f = 1
+
+foo()
+
+print f
+<changed value to be printed>
+
+================================================================================
+
+private and public in Python?
+
+self._a = "a"
+self.__b = "b"
+
+================================================================================
+
+decorators?
+
+================================================================================
+
+parallel execution?
+
+================================================================================
+
+A0 = dict(zip(('a','b','c','d','e'),(1,2,3,4,5)))
+A1 = range(10)
+A2 = sorted([i for i in A1 if i in A0])
+A3 = sorted([A0[s] for s in A0])
+A4 = [i for i in A1 if i in A3]
+A5 = {i:i*i for i in A1}
+A6 = [[i,i*i] for i in A1]
+
+================================================================================
+
+*args, **kwargs?
+
+================================================================================
+
+
+def f(*args,**kwargs):
+    print(args, kwargs)
+
+
+f(1,2,3,"groovy")
+
+t = (4,5,6)
+d = {'a':7,'b':8,'c':9}
+f(*t,**d)
+
+f(1,2,*t,q="Foo",**d)
+
+def f(a=None, b=None):
+  pass
+f(b='b', a='a')
+================================================================================
+
+def print_directory_contents(sPath):
+    """
+    This function takes the name of a directory
+    and prints out the paths files within that
+    directory as well as any files contained in
+    contained directories.
+
+    This function is similar to os.walk. Please don't
+    use os.walk in your answer. We are interested in your
+    ability to work with nested structures.
+    """
+    fill_this_in
+
+================================================================================
+
+
+class A(object):
+    def go(self):
+        print("go A go!")
+
+class B(A):
+    def go(self):
+        super(B, self).go()
+        print("go B go!")
+
+class C(A):
+    def go(self):
+        super(C, self).go()
+        print("go C go!")
+
+class D(B, C):
+    def go(self):
+        super(D, self).go()
+        print("go D go!")
+
+x = D()
+x.go()
+
+================================================================================
+
+garbage collection mechanism?
+
+================================================================================
+
+efficiency?
+
+r_list = {random.random():random.random() for i in range(100000)}
+
+def f1(r_list):
+    l1 = sorted(r_list)
+    l2 = [i for i in l1 if i<0.5]
+    return [i*i for i in l2]
+
+def f2(r_list):
+    l1 = [i for i in r_list if i<0.5]
+    l2 = sorted(l1)
+    return [i*i for i in l2]
+
+================================================================================
+
+
+Computing Science Questions
+    Using pseudo-code, implement binary search of a sorted array of integers
+    What constitutes a good unit test and what a functional one?
+    Describe the core principles of a REST API. How is this a different philosophy from RPC?
+Role Specific Questions
+    Do arguments in Python get passed by reference or by value?
+    Why are functions considered first class objects in Python?
+    What tools do you use for linting, debugging and profiling?
+    Give an example of filter and reduce over an iterable object
+    What are list and dict comprehensions?
+    What do we mean when we say that a certain Lambda expression forms a closure?
+    Name a few differences between Python 2.x and 3.x
+    How is memory managed in python?
+    What will be the output of the following code?
+        list = ['a', 'b', 'c', 'd', 'e']
+        print list [10:]
+    Python uses a Global Interpreter Lock. Does that mean it doesnʼt use real threads?
+    Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about the GIL?
+    A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99. Find the largest palindrome made from the product of two 3-digit numbers.
+    What will be the output of the following code in each step?
+        class C:
+            dangerous = 2
+
+        c1 = C()
+        c2 = C()
+        print c1.dangerous
+        c1.dangerous = 3
+        print c1.dangerous
+        print c2.dangerous
+        del c1.dangerous
+        print c1.dangerous
+        C.dangerous = 3
+        print c2.dangerous
+
+
+================================================================================
+================================================================================
+================================================================================
+Pytest:
+
+Fixture?
+mark?
+scope?
+usage function in module/class scope
+conftest
+finalizer
+request
+parametrization of test and fixture
+
+
+================================================================================
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+data = [
+   {
+     'name': 'Bob', 'age':20,
+   },
+   {
+     'name': 'Martin', 'age': 45,
+   },
+   {
+     'name': 'Steven', 'age': 55,
+   },
+   {
+     'name': 'Kate', 'age': 17,
+   },
+ ]
+
+    - Print name of the oldest one.
+    - Print name of the youngest one.
+    - Print list of guys in range of 19-46 years old.
+    - Print sum of ages of all members.
+       Result should be a sum of: 20 + 45 + 55 + 17.
+    - Try to use filter, map function for 3rd task and reduce function for 4th task.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Implement function which counts number of its calls.
+
+   Examples of expected outputs:
+    print my_calls_counter() # prints 1
+    print my_calls_counter() # prints 2
+    print my_calls_counter() # prints 3
+    ...
+    etc.
+
+Implement the 6th task without global variables.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Add two dictionaries into one:
+
+    first_dict = {"name": "Pavlo", "age": 27}
+    second_dict = {"position": "teacher"}
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+There are two huge lists. Return list of the same elements from both lists.
+
+    Example:
+
+    list_one = [1,2,3,4,5,6,7,8,9, ...,100500, ...] list_second = [4, 11, 16, 100500, 'one', 'two', 'three', ...]
+
+    Returns:
+        [4, 11, 16, 10500]
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Is it possible to open a few files using one with operator? Why?
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+We have the following data: ((id, name, score), (id, name, score), ...)
+
+    data = ((1, "Pavlo", 95), (2, "Stepan", 100), ...)
+
+    Sort this data by id (ASCENDING)
+    Sort this data by score (ASCENDING)
+    Sort this data by name (DESCENDING)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Let's to imagine next situation:
+
+   You have a list of file names with different extensions, like this:
+   list_of_files = ['reports.txt', 'monthly_reports.zip', 'README.txt',
+                    'picture.jpg', 'logo.ttf', 'config.ini']
+
+   For each type of files: TXT, ZIP, JPG, TTF, INI
+   You should create custom handler (function) which returns
+   random size of this file.
+
+   You may use `random.randint`  from `random` module for generation
+   random size.
+   Example:
+       txt_handler(filename) # returns random number in range (100, 500)
+       zip_handler(filename) # returns random number in range(500, 700)
+       jpg_handler(filename) # returns random number in range(800, 1000)
+
+   Firstly, you must create a function to recognize type of file.
+   Example:
+       recognize_file_type('reports.txt') returns: txt
+       recognize_file_type('logo.ttf') returnf ttf
+
+   Then, using `recognize_file_type` function you may create another function
+   which may execute your handlers for appropriate file.
+   Example:
+       run_executors(list_of_files) execute `txt_handler` for .txt files,
+                                     `zip_handler` for .zip file, etc.
+
+   Finally, you may use `filter`, `map` or `reduce` functions for some cases.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+sorted vs list.sort()
+
+    >>> a = [1, -2, 4, 5, 0, 8, 11]
+    >>> sorted(a)
+    ?
+    >>> a
+    ?
+    >>> a.sort()
+    ?
+    >>> a
+    ?
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+What happened?
+
+    try:
+        raise ValueError('Boom!')
+    except KeyError:
+        print 'Got KeyError'
+    except Exception:
+        print 'Got error'
+    except ValueError:
+        print 'Got ValueError'
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+1 + 1 == 2?
+1 + 1 is 2?
+1 + 2 == 3?
+1 + 2 is 3?
+256 + 1 == 257?
+256 + 1 is 257?
+-7 + 1 == -6?
+-7 + 1 is -6?
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Calculate N factorial.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Reverse keys and values from dictionary. Example:
+
+    Input:
+
+    data = {"name": "Pavlo", "age": 27}
+
+    Output:
+
+    data = {"Pavlo": "name", 27: "age"}
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Find min int value from list: a = ['-1', '1', '4', '-9', '0']
+
+    Expected output: -9

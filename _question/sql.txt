@@ -1,0 +1,44 @@
+2 проблема запитів, ми маємо багато запитів на читання і мало на вставку, які рішення?
+3 проблема запитів, ми маємо багато запитів на вставку, зміну, мало на читання, які рішення?
+4 проблема запитів, ми маємо багото запитів на читання та на вставку, зміну, які рішення?
+
+
+OFFSET ?
+
+FETCH ?
+
+LEFT JOIN vs RIGHT JOIN
+
+запит many to many?
+
+що робить GROUP BY?
+
+HAVING vs  WHERE?
+
+СOALESCE те саме що і IF-THEN-ELSE?
+
+Оператор SELECT DISTINCT ?
+
+CASE у sql?
+
+UNION vs UNION ALL e sql?
+
+Wildcards (simple) у sql запитах?
+
+DCL команди?
+DML команди?
+DDL команди?
+transaction (TCL) команди?
+
+COMMIT − to save the changes.
+ROLLBACK − to roll back the changes.
+SAVEPOINT − creates points within the groups of transactions in which to ROLLBACK.
+RELEASE SAVEPOINT: It is used to remove an already existing SAVEPOINT.
+SET TRANSACTION − Places a name on a transaction.
+
+
+
+чи можна мати декілька комітів у транзакці?
+
+
+Чи сейвпоїнт комітить у транзакції?
