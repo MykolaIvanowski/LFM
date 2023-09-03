@@ -18,8 +18,25 @@ def longest_common_prefix(list_compare):
 
 
 list_1 = ["onew", "tweo", "three"]
-list_2 = ["flower","flow","flight"]
+list_2 = ["floweryerw","flow","flight1111","flirght", "flsdcwkko"]
 
 
 print(longest_common_prefix(list_1))
 print(longest_common_prefix(list_2))
+
+
+def new_longest_common_prefix(strs):
+    strs.sort()
+    x = len(strs[0]) if len(strs[0]) < len(strs[-1]) else len(strs[-1])
+    prefix_count = 0
+    for i in range(x):
+        if strs[0][i] == strs[-1][i]:
+            prefix_count += 1
+        else:
+            break
+    prefix = strs[0][0:prefix_count]
+    return prefix
+
+
+print(new_longest_common_prefix(list_2))
+print(new_longest_common_prefix(list_1))
