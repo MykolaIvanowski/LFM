@@ -1,0 +1,16 @@
+flake8 - tools for stile and quality code
+black - tool for autoformat
+isort - tool for sort imports
+seed-isort-config - need for isort work
+
+pre-commit - configured and helped work it all together (flake8, isort, black)
+
+for flake8 - exist many additional tools
+
+# command for run all checks configurate in config yaml
+pre-commit run --all-files
+
+flake8 used .flake8 file
+isort used .isort
+black used pyproject.tomi
+pre-commit .pre-commit-config.yaml
