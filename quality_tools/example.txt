@@ -1,3 +1,5 @@
+in this folder, files have base examples with pre-commit
+
 flake8 - tools for stile and quality code
 black - tool for autoformat
 isort - tool for sort imports
