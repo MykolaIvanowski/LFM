@@ -9,7 +9,7 @@ print('='*20)
 
 # range(start, stop)
 def foo():
-    for i in range(1, 5):  # not include five
+    for i in range(1, 5):  # from 1 to 4 not include five
         print(i)
 
 foo()
