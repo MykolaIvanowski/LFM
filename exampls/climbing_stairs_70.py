@@ -6,6 +6,7 @@ def climb_stairs(n):
     return dp[n]
 
 
+print(climb_stairs(3))
 print(climb_stairs(5))
 print(climb_stairs(6))
 print(climb_stairs(7))
