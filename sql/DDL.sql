@@ -1,5 +1,51 @@
 -- Data Definition Language   DDL
 
+ --1 to 1
+CREATE TABLE dbo.table_a(
+    id_a int PRIMARY KEY,
+    column_1 varchar(25),
+);
+
+CREATE TABLE dbo.table_b(
+    id_b int PRIMARY KEY,
+    column_1 varchar(15),
+    fk_id INT UNIQUE FOREIGN KEY REFERENCES table_a(id_a)
+);
+
+-- 1 to many
+
+CREATE TABLE table_a
+(
+id_a INT PRIMARY KEY,
+column_1 VARCHAR(100)
+);
+
+CREATE TABLE table_b
+(
+id_b INT PRIMARY KEY,
+column_1 VARCHAR(100),
+fk_id INT FOREIGN KEY REFERENCES table_a(id_a)
+);
+
+
+-- many to many
+
+CREATE TABLE table_a(
+id_a INT(10) PRIMARY KEY,
+column_1 VARCHAR(100),
+);
+
+CREATE TABLE table_b(
+id_b INT(10) PRIMARY KEY,
+column_1 VARCHAR(100),
+);
+CREATE TABLE table_a_b(
+id_a INT(15) NOT NULL,
+id_b INT(14) NOT NULL,
+FOREIGN KEY (id_a) REFERENCES Student(id_b),
+FOREIGN KEY (id_b) REFERENCES Class(id_a),
+UNIQUE (id_a, id_b)
+);
 
 CREATE DATABASE `test`
 
