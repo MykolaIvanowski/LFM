@@ -57,7 +57,6 @@ The conceptual order of query processing is:
 
 -- join vs subqueries
 
---I won't leave you in suspense, between Joins and Subqueries,
 --joins tend to execute faster. In fact, query retrieval time using
 --joins will almost always outperform one that employs a subquery.
 --The reason is that joins mitigate the processing burden on the database
