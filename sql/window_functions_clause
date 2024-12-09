@@ -1,0 +1,21 @@
+
+COALESCE(subquery,10): This function is used to return the first non-null value from a list.
+ In this case, it will return the result of the subquery, or 10 if the subquery returns NULL.
+
+coalesce(subquery to pass, return something if subquery return null)
+coalesce((select ...), 10)
+coalesce(A,B) --> if A is value return value if A is null return B
+
+    ***
+
+The LEFT() function in SQL is used to extract a specified number of characters
+from the left side of a string.
+It's quite handy when you need to isolate parts of a string based on a given length.
+LEFT(string, number_of_characters)
+
+SELECT full_name, LEFT(full_name, 3) AS name_initials
+FROM employees;
+This query will return a result set where each row includes the full_name and
+the first three characters of that name as name_initials.
+
+    ***

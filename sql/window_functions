@@ -1,9 +1,0 @@
-
-COALESCE(subquery,10): This function is used to return the first non-null value from a list.
- In this case, it will return the result of the subquery, or 10 if the subquery returns NULL.
-
-coalesce(subquery to pass, return something if subquery return null)
-coalesce((select ...), 10)
-coalesce(A,B) --> if A is value return value if A is null return B
-
-    ***
