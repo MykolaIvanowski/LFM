@@ -19,3 +19,12 @@ This query will return a result set where each row includes the full_name and
 the first three characters of that name as name_initials.
 
     ***
+
+AVG(value) - counting average for all value passed
+
+select name, avg(int_value) from table
+group by name
+-- grouped name will have average number of int_value (formula (int1+int2+int3)/3  )
+name int_value
+bob     2
+
