@@ -27,3 +27,32 @@ WITH temporaryTable (averageValue) as
     SELECT Attr1
     FROM Table, temporaryTable
     WHERE Table.Attr1 > temporaryTable.averageValue;
+
+
+
+--Cross Join:
+--
+--A CROSS JOIN in SQL is a type of join that returns the Cartesian product of two tables.
+--This means that every row from the first table is combined with every row
+--from the second table, resulting in all possible combinations of rows between the two tables.
+--
+--SELECT columns
+--FROM table1
+--CROSS JOIN table2;
+--
+--
+--Characteristics of CROSS JOIN:
+--All Combinations: It produces a result set that includes every possible combination of rows from both tables.
+--
+--Cartesian Product: This is the mathematical term for the set of all ordered pairs
+--obtained by combining each row of one table with each row of the other.
+--
+--No Join Condition: Unlike other types of joins (INNER JOIN, LEFT JOIN, etc.),
+--CROSS JOIN does not require a condition to specify how rows should be combined.
+
+--When to Use CROSS JOIN:
+--Generating Combinations: Useful when you need to generate combinations of rows,
+--such as creating a schedule where every student is paired with every possible subject.
+--
+--Testing and Debugging: Sometimes used in testing scenarios to ensure that
+--your query logic can handle all possible combinations of data.

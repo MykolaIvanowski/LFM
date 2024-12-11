@@ -28,3 +28,39 @@ group by name
 name int_value
 bob     2
 
+    ***
+
+using()
+
+The USING() clause in SQL is used in joins to simplify the syntax when two tables
+have one or more columns in common, typically with the same names
+
+examples:
+
+    SELECT columns
+    FROM table1
+    JOIN table2
+    ON table1.common_column = table2.common_column;
+
+the same:
+
+    SELECT columns
+    FROM table1
+    JOIN table2
+    USING (common_column);
+
+
+    ***
+
+The ROUND() function in SQL is used to round a numeric value
+to a specified number of decimal places.
+It's a useful function when you need to control the precision of your numeric data.
+
+example:
+
+SELECT ROUND(123.456, 2) as rounded_value;
+
+rounded_value
+123.46
+
+    ***
