@@ -28,3 +28,108 @@ group by name
 name int_value
 bob     2
 
+    ***
+
+using()
+
+The USING() clause in SQL is used in joins to simplify the syntax when two tables
+have one or more columns in common, typically with the same names
+
+examples:
+
+    SELECT columns
+    FROM table1
+    JOIN table2
+    ON table1.common_column = table2.common_column;
+
+the same:
+
+    SELECT columns
+    FROM table1
+    JOIN table2
+    USING (common_column);
+
+
+    ***
+
+The ROUND() function in SQL is used to round a numeric value
+to a specified number of decimal places.
+It's a useful function when you need to control the precision of your numeric data.
+
+example:
+
+SELECT ROUND(123.456, 2) as rounded_value;
+
+rounded_value
+123.46
+
+    ***
+
+The OVER() clause in SQL is used in conjunction with window functions to perform
+calculations across a set of table rows that are somehow related to the current row.
+This allows for more complex calculations and analytics without collapsing
+the result set into grouped summaries.
+
+Key feature:
+Window Functions: Functions like ROW_NUMBER(), RANK(), DENSE_RANK(), SUM(), AVG(),
+ COUNT(), MIN(), MAX(), LAG(), LEAD(), FIRST_VALUE(), and LAST_VALUE() can be used with OVER().
+
+Partitioning: Divides the result set into partitions to which the window function is applied.
+
+Ordering: Specifies the order in which the rows are processed in the window.
+
+
+SELECT employee_id, department, salary,
+       ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) as row_num
+FROM employees;
+This query assigns a unique row number to each employee within their department,
+ordered by salary in descending order.
+
+
+SELECT employee_id, department, salary,
+       SUM(salary) OVER (PARTITION BY department ORDER BY salary DESC) as running_total
+FROM employees;
+This query returns the previous salary for each employee,
+using a default value of 0 if there is no previous row.
+
+
+SELECT sales_date, sales_amount,
+       AVG(sales_amount) OVER (
+            ORDER BY sales_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+            ) as moving_avg
+FROM sales;
+This query calculates a moving average of sales amounts over
+the current row and the two preceding rows.
+
+
+OVER(): Defines the window over which the function operates.
+
+    PARTITION BY: Divides the result set into partitions.
+
+    ORDER BY: Orders the rows within each partition.
+
+    ROWS BETWEEN: Defines the range of rows for window frame operations.
+    
+Summary
+The OVER() clause enhances SQL's capability to perform complex calculations
+over rows of data without collapsing them into grouped summaries.
+It maintains detailed information while allowing for aggregate-like calculations.
+
+(If it say in simple way it is kind of group by operation)
+
+
+    ***
+
+  DATEDIFF()
+The DATEDIFF() function in SQL is used to calculate the difference between two dates.
+It returns the number of days between the start date and the end date.
+
+examples:
+
+SELECT order_id, order_date, delivery_date,
+       DATEDIFF(delivery_date, order_date) as days_between
+FROM orders;
+
+DATEDIFF(delivery_date, order_date):
+Calculates the difference in days between the delivery_date and order_date for each row.
+
