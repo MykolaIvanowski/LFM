@@ -133,3 +133,37 @@ FROM orders;
 DATEDIFF(delivery_date, order_date):
 Calculates the difference in days between the delivery_date and order_date for each row.
 
+    ***
+
+ROW_NUMBER():
+
+Assigns a sequential integer to rows in a result set.
+Used for tasks like PAGINATION, RANKING, and NUMBERING ROWS.
+Requires an OVER clause with ORDER BY to specify the sequence.
+
+example of numbering rows:
+SELECT
+    employee_id,
+    name,
+    age,
+    department,
+    ROW_NUMBER() OVER (ORDER BY employee_id) AS row_num
+FROM
+    employees;
+
+example of pagination:
+WITH numbered_employees AS (
+    SELECT
+        employee_id,
+        name,
+        age,
+        department,
+        ROW_NUMBER() OVER (ORDER BY employee_id) AS row_num
+    FROM
+        employees
+)
+SELECT *
+FROM numbered_employees
+WHERE row_num BETWEEN 1 AND 10;
+This query assigns row numbers to all employees and then filters to show only rows 1 through 10.
+
