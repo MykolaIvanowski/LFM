@@ -38,13 +38,50 @@ with Common_table_expresion as (
 select
 	customer_id, product_name,order_date, rnk
 from common_table_expresion
-where rnk = 1
+where rnk = 1;
 
 
 -- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
+select m.product_name, count(order_date)
+from dannys_diner.sales s
+join dannys_diner.menu  m on s.product_id=m.product_id
+group by   m.product_name
+order by 2 desc
+limit 1;
 -- 5. Which item was the most popular for each customer?
+with rank_rows_orders as(
+	select
+		s.customer_id,
+		m.product_name,
+		rank() over (partition by customer_id order by count(order_date) desc) as rank_orders,
+		row_number() over (partition by customer_id order by count(order_date) desc) as row_oreders
+	from dannys_diner.sales s
+	join dannys_diner.menu m on m.product_id=s.product_id
+	group by s.customer_id, m.product_name)
+
+select * from rank_rows_orders
+where rank_orders = 1;
+
+
 -- 6. Which item was purchased first by the customer after they became a member?
+with first_order as(select
+		m.customer_id,
+		s.order_date,
+		m.join_date,
+		me.product_name,
+		rank() over(partition by s.customer_id order by order_date) as rnk_orders,
+		row_number() over (partition by s.customer_id order by order_date) as rw_orders
+	from dannys_diner.members m
+	join  dannys_diner.sales s on m.customer_id = s.customer_id
+	join dannys_diner.menu me on me.product_id = s.product_id
+	where m.join_date <= s.order_date
+)
+
+select * from first_order
+where rnk_orders = 1
+
 -- 7. Which item was purchased just before the customer became a member?
+
 -- 8. What is the total items and amount spent for each member before they became a member?
 -- 9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 -- 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
