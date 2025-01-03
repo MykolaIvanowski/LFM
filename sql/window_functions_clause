@@ -167,3 +167,55 @@ FROM numbered_employees
 WHERE row_num BETWEEN 1 AND 10;
 This query assigns row numbers to all employees and then filters to show only rows 1 through 10.
 
+    ***
+The DATEADD function in SQL is used to add a specific interval to a date.
+The syntax can vary slightly depending on the SQL database you're using
+(e.g., SQL Server, MySQL, PostgreSQL), but here's a general example using SQL Server syntax:
+
+DATEADD(interval, number, date)
+
+Here’s an example that adds 5 days to the current date:
+SELECT DATEADD(day, 5, GETDATE()) AS NewDate;
+
+For a specific date, you can replace GETDATE() with your date:
+SELECT DATEADD(day, 10, '2025-01-01') AS NewDate;
+
+For postgresql insted of dateadd() need use INTERVAL:
+SELECT NOW() - INTERVAL '5 days' AS five_days_ago;
+
+    ***
+postgres INTERVAL
+In PostgreSQL, the INTERVAL type is used to represent a period of time (a duration).
+You can use it to add or subtract time from a DATE, TIME, or TIMESTAMP value.
+You can specify the interval in terms of years, months, days, hours, minutes, seconds, etc
+
+Adding an Interval:
+SELECT NOW() + INTERVAL '1 year' AS next_year;
+
+Subtracting an Interval:
+SELECT NOW() - INTERVAL '3 days' AS three_days_ago;
+
+Combining Multiple Units:
+SELECT NOW() + INTERVAL '1 year 2 months 3 days' AS future_date;
+
+Using Intervals in a WHERE Clause:
+SELECT *
+FROM your_table_name
+WHERE order_date > NOW() - INTERVAL '30 days';
+
+Interval Arithmetic:
+SELECT INTERVAL '2 hours' + INTERVAL '30 minutes' AS total_time;
+
+    ***
+TURNCATE()
+The date_trunc function in PostgreSQL is used to truncate a timestamp or date to a
+specified level of precision, such as year, month, day, etc.
+This can be especially useful for grouping and comparing dates at a specific granularity.
+date_trunc('precision', your_date_column)
+
+
+EXAMPLE:
+date_trunc('month',s.order_date)='2021-01-01'
+In PostgreSQL, when using the date_trunc function, the result is a date or timestamp.
+You can't directly compare this result to a string like '2021-01-01'.
+Instead, you should cast the result to a date for comparison.
