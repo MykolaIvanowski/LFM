@@ -121,4 +121,19 @@ from dannys_diner.sales s
 join dannys_diner.members m using(customer_id)
 join dannys_diner.menu mu using(product_id)
 where s.order_date >= m.join_date and s.order_date <='2021-01-31'
-group by s.customer_id
+group by s.customer_id;
+
+
+-- bonus question
+
+select
+	s.customer_id,
+	s.order_date, m.product_name,
+	m.price ,
+	case when s.order_date<mr.join_date then 'N'
+	when s.order_date>=mr.join_date then 'Y'
+	else 'N' end as member
+from dannys_diner.sales s
+join dannys_diner.members  mr using (customer_id)
+join dannys_diner.menu  m using(product_id)
+order by s.customer_id, s.order_date;
