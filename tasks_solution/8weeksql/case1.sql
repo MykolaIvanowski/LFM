@@ -123,9 +123,7 @@ join dannys_diner.menu mu using(product_id)
 where s.order_date >= m.join_date and s.order_date <='2021-01-31'
 group by s.customer_id;
 
-
--- bonus question
-
+-- bonus question 1
 select
 	s.customer_id,
 	s.order_date, m.product_name,
@@ -137,3 +135,47 @@ from dannys_diner.sales s
 join dannys_diner.members  mr using (customer_id)
 join dannys_diner.menu  m using(product_id)
 order by s.customer_id, s.order_date;
+
+-- bonus question 2
+select
+	s.customer_id,
+	s.order_date,
+	m.product_name,
+	m.price,
+	case when s.order_date<mr.join_date then 'N'
+	when s.order_date>=mr.join_date then 'Y'
+	else 'N' end as members,
+	case when s.order_date>=mr.join_date then rank() over(partition by s.customer_id, (
+		case when s.order_date<mr.join_date then 'N'
+		when s.order_date>=mr.join_date then 'Y'
+		else 'N' end)
+		order by s.order_date )
+	else null end
+	as ranking
+from dannys_diner.sales s
+left join dannys_diner.members mr using(customer_id)
+join dannys_diner.menu m using(product_id)
+order by s.customer_id;
+
+-- or for better reading
+with rank_member as (select
+		s.customer_id,
+		s.order_date,
+		m.product_name,
+		m.price,
+		case when s.order_date<mr.join_date then 'N'
+		when s.order_date>=mr.join_date then 'Y'
+		else 'N' end as members
+	from dannys_diner.sales s
+	left join dannys_diner.members mr using(customer_id)
+	join dannys_diner.menu m using(product_id)
+	order by s.customer_id)
+
+select *,
+	case when members='N' then null
+	else rank() over(partition by customer_id, members order by order_date ) end
+	as ranking
+from rank_member;
+
+--else rank() over(partition by customer_id, members order by order_date ) end
+-- adding members in sate mean that rank() function will not count nulls in ranking column
