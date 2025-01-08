@@ -219,3 +219,62 @@ date_trunc('month',s.order_date)='2021-01-01'
 In PostgreSQL, when using the date_trunc function, the result is a date or timestamp.
 You can't directly compare this result to a string like '2021-01-01'.
 Instead, you should cast the result to a date for comparison.
+
+
+    ***  DATEPART vs EXTRACT
+
+ The DATEPART function in SQL is used to extract a specific part of a date,
+ such as the year, month, day, hour, minute, etc. It is supported by several SQL database systems,
+  including SQL Server, but not natively in PostgreSQL (PostgreSQL uses
+  a different function called EXTRACT).
+
+  SELECT
+  DATEPART(year, order_date) AS Year,
+  DATEPART(month, order_date) AS Month,
+  DATEPART(day, order_date) AS Day,
+  DATEPART(hour, order_date) AS Hour,
+  DATEPART(minute, order_date) AS Minute,
+  DATEPART(second, order_date) AS Second
+FROM
+  orders;
+
+PostgreSQL EXTRACT:
+If you're using PostgreSQL, you would use the EXTRACT function instead
+
+SELECT
+  EXTRACT(year FROM order_date) AS Year,
+  EXTRACT(month FROM order_date) AS Month,
+  EXTRACT(day FROM order_date) AS Day,
+  EXTRACT(hour FROM order_date) AS Hour,
+  EXTRACT(minute FROM order_date) AS Minute,
+  EXTRACT(second FROM order_date) AS Second
+FROM
+  orders;
+
+
+    ***
+
+to_char()
+The to_char function in PostgreSQL is used to convert various data types to a string,
+and it’s very handy for formatting dates and numbers. Here’s a basic rundown of
+how you can use it:
+
+to_char(value, format)
+
+SELECT
+  to_char(current_date, 'YYYY-MM-DD') AS formatted_date;
+
+SELECT
+  to_char(current_timestamp, 'Day') AS day_of_week;
+This will return the current day of the week, e.g.,
+for example if today is Wednesday return Wednesday .
+
+SELECT
+  to_char(order_time + interval '2 day', 'Day') AS day_of_week
+FROM
+  your_table;
+This adds 2 days to the order_time and formats it to show the day of the week.
+
+SELECT
+  to_char(1234.5678, 'FM9990.00') AS formatted_number;
+This will return 1234.57.

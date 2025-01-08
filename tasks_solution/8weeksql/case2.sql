@@ -31,11 +31,47 @@ select order_time, count(pizza_id) as max_pizza_ordered
 from pizza_runner.customer_orders
 group by order_time
 order by 2 desc
-limit 1
+limit 1;
+
 --    For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
+select
+	co.customer_id,
+	sum(case when ((extras ~ '^[a-zA-Z0-9]' and extras is not null and extras <>'null')
+	or (exclusions ~ '^[a-zA-Z0-9]' and exclusions is not null and exclusions<>'null'))
+	then 1 else 0 end) as change,
+	sum(case when ((extras ~ '^[a-zA-Z0-9]' and extras is not null and extras <>'null')
+	or (exclusions ~ '^[a-zA-Z0-9]' and exclusions is not null and exclusions<>'null'))
+	then 0 else 1 end) as no_change
+from pizza_runner.customer_orders co
+join pizza_runner.runner_orders ro on co.order_id =ro.order_id
+where pickup_time <> 'null'
+group by co.customer_id;
+
 --    How many pizzas were delivered that had both exclusions and extras?
+select
+	sum(
+		case when co.exclusions ~ '^[a-zA-Z0-9]' and co.extras ~ '^[a-zA-Z0-9]'
+		and co.extras <> 'null' and co.exclusions <> 'null'
+		and co.extras is not null and co.exclusions is not null
+		then 1 else 0 end
+	) as pizzas_both_changes
+from pizza_runner.customer_orders co
+join pizza_runner.runner_orders ro on co.order_id =ro.order_id
+where pickup_time <> 'null';
+
 --    What was the total volume of pizzas ordered for each hour of the day?
+select
+	extract(hour from order_time) as hour_of_day,
+	count(pizza_id) as pizza_ordered
+from pizza_runner.customer_orders
+group by 1;
+
 --    What was the volume of orders for each day of the week?
+select
+	to_char(order_time + interval '2 day', 'Day'),
+	count(*) as total_pizza_ordered
+from pizza_runner.customer_orders
+group by 1;
 --
 --B. Runner and Customer Experience
 --
