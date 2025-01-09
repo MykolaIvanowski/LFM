@@ -76,12 +76,69 @@ group by 1;
 --B. Runner and Customer Experience
 --
 --    How many runners signed up for each 1 week period? (i.e. week starts 2021-01-01)
+select date_trunc('week', registration_date) + interval '4 days' as week, count(runner_id)
+from pizza_runner.runners
+where registration_date >= '2021-01-01'
+group by 1
+order by 1;
+
 --    What was the average time in minutes it took for each runner to arrive at the Pizza Runner HQ to pickup the order?
+select runner_id,
+	avg(extract(EPOCH FROM
+	(cast(pickup_time as timestamp) - cast(order_time as timestamp)))/60)
+	as average_time
+from pizza_runner.runner_orders ro
+join pizza_runner.customer_orders co on ro.order_id=co.order_id
+where pickup_time <> 'null'
+group by runner_id;
 --    Is there any relationship between the number of pizzas and how long the order takes to prepare?
+with count_per_order as(
+	select co.order_id,
+		count(pizza_id) count_pizza,
+		extract(epoch from (cast(pickup_time as timestamp)-cast(order_time as timestamp)))/60
+		as time_diff
+	from pizza_runner.runner_orders ro
+	join pizza_runner.customer_orders co using(order_id)
+	where pickup_time <> 'null'
+	group by pickup_time, order_time, co.order_id
+)
+
+select count_pizza,avg(time_diff) from count_per_order
+group by 1;
 --    What was the average distance travelled for each customer?
+select co.customer_id,
+	avg(cast(replace(distance,'km','') as double precision))
+from pizza_runner.runner_orders ro
+join pizza_runner.customer_orders co on ro.order_id = co.order_id
+where pickup_time<>'null'
+group by co.customer_id;
+
 --    What was the difference between the longest and shortest delivery times for all orders?
+select
+	max(cast(regexp_replace(duration,'[^0-9]','','g') as double precision)) -
+	min(cast(regexp_replace(duration,'[^0-9]','','g') as double precision))
+	as diff_delivery
+from pizza_runner.runner_orders
+where pickup_time<>'null';
+
 --    What was the average speed for each runner for each delivery and do you notice any trend for these values?
+select order_id, runner_id,
+	avg(
+		(cast(replace(distance,'km','') as double precision)) /
+		(cast(regexp_replace(duration,'[^0-9]','','g') as double precision))
+	)as avg_distance
+from pizza_runner.runner_orders
+where pickup_time <> 'null'
+group by order_id, runner_id
+order by 2,1; -- the longer wor then faster move?
+
 --    What is the successful delivery percentage for each runner?
+select runner_id,
+	sum(case when distance = 'null' then 0 else 1 end)::float/
+	count(runner_id)*100 as percetage_rate
+from pizza_runner.runner_orders
+group by runner_id;
+
 --
 --C. Ingredient Optimisation
 --
