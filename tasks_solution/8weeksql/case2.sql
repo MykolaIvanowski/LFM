@@ -141,9 +141,36 @@ group by runner_id;
 
 --
 --C. Ingredient Optimisation
---
 --    What are the standard ingredients for each pizza?
+with pizza_toppings as(
+	select
+		pr.pizza_id,
+		unnest(string_to_array(toppings,','))::int as topping_id,
+		pizza_name
+	from pizza_runner.pizza_recipes pr
+	join pizza_runner.pizza_names pn on pn.pizza_id=pr.pizza_id
+)
+
+select topping_name
+from pizza_toppings p1
+join pizza_runner.pizza_toppings p2 on p1.topping_id=p2.topping_id
+group by topping_name
+having count(distinct p1.pizza_id)>1;
+
 --    What was the most commonly added extra?
+with extras_toppings as(
+	select order_id,
+		unnest(string_to_array(extras,','))::int as topping_id
+	from pizza_runner.customer_orders
+	where extras <> 'null'
+)
+
+select count(et.topping_id), topping_name from extras_toppings et
+join pizza_runner.pizza_toppings pt on pt.topping_id = et.topping_id
+group by topping_name
+order by 1 desc
+limit 1;
+
 --    What was the most common exclusion?
 --    Generate an order item for each record in the customers_orders table in the format of one of the following:
 --        Meat Lovers
