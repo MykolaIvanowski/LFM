@@ -172,11 +172,73 @@ order by 1 desc
 limit 1;
 
 --    What was the most common exclusion?
+with exclusion_ids as(
+	select order_id,
+		unnest(string_to_array(exclusions,','))::int as exclusion_id
+	from pizza_runner.customer_orders
+	where exclusions <> 'null'
+)
+
+select count(topping_id),topping_name from exclusion_ids e
+join pizza_runner.pizza_toppings p on e.exclusion_id=p.topping_id
+group by topping_name
+order by 1 desc
+limit 1
+
 --    Generate an order item for each record in the customers_orders table in the format of one of the following:
 --        Meat Lovers
 --        Meat Lovers - Exclude Beef
 --        Meat Lovers - Extra Bacon
 --        Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers
+with extra_exclude as(
+	select order_id, pizza_name,
+		case when cc.exclusion <> 'null' and cc.exclusion is not null
+			then pt1.topping_name else 'null' end as exclusion_name,
+		case when cc.extras <> 'null' and cc.extras is not null
+			then pt2.topping_name else 'null'end as extra_name
+		from (
+		select order_id,
+			unnest(string_to_array(exclusions,', ')) as exclusion,
+			unnest(string_to_array(extras,', ')) as extras,
+			pizza_id
+		from pizza_runner.customer_orders)	as cc
+	left join pizza_runner.pizza_toppings pt1 on pt1.topping_id::text=cc.exclusion
+	left join pizza_runner.pizza_toppings pt2 on pt2.topping_id::text=cc.extras
+	join pizza_runner.pizza_names pn on pn.pizza_id = cc.pizza_id
+	where pt1.topping_name <> 'null' or pt2.topping_name <> 'null'
+),
+
+extra_exclude_b as (
+	select order_id, pizza_name,
+		string_agg(case when exclusion_name <> 'null' then exclusion_name else '' end , ', ') as exclusion_name,
+		string_agg(case when extra_name <> 'null' then extra_name  else '' end, ', ') as extra_name
+	from extra_exclude
+	group by order_id, pizza_name
+)
+
+SELECT
+    order_id,
+    STRING_AGG(
+	case when pizza_name ='Meatlovers'
+		then 'Meat lovers'
+		when pizza_name ='Vegetarian'
+		then 'Vege lovers' else '' end ||
+	case
+		when exclusion_name <> 'null'
+		then ' - Exclude ' else '' end ||
+	case when exclusion_name <> 'null'
+		then exclusion_name else '' end ||
+	case when extra_name <> 'null'
+		then ' - Extra ' else '' end ||
+	case when extra_name <> 'null'
+		then extra_name else '' end,
+	case when extra_name <> '' then ', ' else '' end)
+	AS pizza_lovers
+FROM
+    extra_exclude_b
+GROUP BY
+    order_id;
+
 --    Generate an alphabetically ordered comma separated ingredient list for each pizza order from the customer_orders table and add a 2x in front of any relevant ingredients
 --        For example: "Meat Lovers: 2xBacon, Beef, ... , Salami"
 --    What is the total quantity of each ingredient used in all delivered pizzas sorted by most frequent first?
