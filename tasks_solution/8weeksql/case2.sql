@@ -241,7 +241,99 @@ GROUP BY
 
 --    Generate an alphabetically ordered comma separated ingredient list for each pizza order from the customer_orders table and add a 2x in front of any relevant ingredients
 --        For example: "Meat Lovers: 2xBacon, Beef, ... , Salami"
+with ingredient_orders as (
+	select order_id,
+		unnest(string_to_array(extras,', ')) as extras,
+		pizza_name,
+		unnest(string_to_array(pr.toppings, ', '))::int as toppings_id
+	from pizza_runner.customer_orders co
+	join pizza_runner.pizza_recipes pr on co.pizza_id=pr.pizza_id
+	join pizza_runner.pizza_names pn on pn.pizza_id=co.pizza_id
+),
+ingredient_pizza as (
+	select order_id,
+		pizza_name,
+		pt.topping_name as main_topping,
+		pt1.topping_name as extra_topping
+	from ingredient_orders io
+	join pizza_runner.pizza_toppings pt on io.toppings_id=pt.topping_id
+	left join pizza_runner.pizza_toppings pt1 on pt1.topping_id::text=io.extras
+),
+ingredient_combined as(
+	select order_id,pizza_name,main_topping as combain_toppings
+	from ingredient_pizza
+	union all
+	select order_id,pizza_name,extra_topping as combain_toppings
+	from ingredient_pizza
+	where extra_topping is not null and extra_topping <> 'null'
+	group by 1,2,3
+),
+mixed_ingredient as(
+select order_id,
+	pizza_name,
+	combain_toppings,
+	count(*) as n
+from ingredient_combined
+group by order_id,pizza_name,combain_toppings
+order by 1
+),
+pizza as(
+select
+	order_id,pizza_name,
+	string_agg(
+			case when n>1 then n ||'x ' || combain_toppings else combain_toppings  end, ', '
+	) as general_ingredients
+from mixed_ingredient
+group by order_id,pizza_name)
+
+select order_id,
+	string_agg(
+			case when pizza_name='Meatlovers'
+			then 'Meat Lovers' ||' - '|| general_ingredients
+			when pizza_name='Vegetarian'
+			then 'Vege Lovers' || ' - ' ||general_ingredients end ,'; '
+	)
+from pizza
+group by order_id;
+
+
 --    What is the total quantity of each ingredient used in all delivered pizzas sorted by most frequent first?
+--
+with ingredient_orders as (
+	select order_id,
+		unnest(string_to_array(extras,', ')) as extras,
+		pizza_name,
+		unnest(string_to_array(pr.toppings, ', '))::int as toppings_id
+	from pizza_runner.customer_orders co
+	join pizza_runner.pizza_recipes pr on co.pizza_id=pr.pizza_id
+	join pizza_runner.pizza_names pn on pn.pizza_id=co.pizza_id
+),
+ingredient_pizza as (
+	select order_id,
+		pizza_name,
+		pt.topping_name as main_topping,
+		pt1.topping_name as extra_topping
+	from ingredient_orders io
+	join pizza_runner.pizza_toppings pt on io.toppings_id=pt.topping_id
+	left join pizza_runner.pizza_toppings pt1 on pt1.topping_id::text=io.extras
+),
+ingredient_combined as(
+	select order_id,pizza_name,main_topping as combain_toppings
+	from ingredient_pizza
+	union all
+	select order_id,pizza_name,extra_topping as combain_toppings
+	from ingredient_pizza
+	where extra_topping is not null and extra_topping <> 'null'
+	group by 1,2,3
+)
+
+select
+	combain_toppings as ingredient,
+	count(combain_toppings) as quantity_ingredients
+from ingredient_combined
+group by combain_toppings
+order by 2 desc
+
 --
 --D. Pricing and Ratings
 --
