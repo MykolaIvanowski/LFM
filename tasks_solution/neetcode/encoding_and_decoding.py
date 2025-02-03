@@ -1,7 +1,5 @@
 from typing import List
 
-from tasks_solution.coint_exchange import array
-
 
 class Solution:
     def encode(self,strs: List[str])-> str:
