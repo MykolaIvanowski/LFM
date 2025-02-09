@@ -14,3 +14,11 @@ class Solution:
                 longest = max(length,longest)
         return longest
 
+# Check for Start of a Sequence
+#       if (num - 1) not in numSet:
+# Find the Length of the Sequence
+#       length = 1
+#       while (num + length) in numSet:
+#           length += 1
+# Update Longest Sequence
+#        longest = max(length, longest)
