@@ -1,0 +1,279 @@
+Linear Data Structures
+    Array: A collection of elements identified by index or key.
+        Array (Basic Array): A collection of elements identified by index or key,
+        typically stored in contiguous memory locations.
+        Dynamic Array: An array that can automatically resize itself when its capacity is exceeded,
+        such as ArrayList in Java or Vector in C++.
+
+        Multi-Dimensional Array: An array that has more than one dimension, such as:
+
+        2D Array: An array of arrays, often used to represent matrices or grids.
+
+        3D Array: An array of arrays of arrays, used for three-dimensional data.
+
+        Jagged Array: An array of arrays where the inner arrays can have different lengths,
+        allowing for non-uniform structures.
+
+        Sparse Array: An array optimized for storing data with a large number of
+        default or zero values, reducing memory usage.
+
+        Bit Array (Bit Vector or Bit Set): An array where each element is a single bit,
+        used to efficiently store and manipulate large sets of binary data.
+
+        Circular Array (Circular Buffer or Ring Buffer): An array that connects the end back
+        to the beginning, allowing for efficient use of memory and convenient implementation of queues.
+
+        Associative Array (Map or Dictionary): A collection of key-value pairs, where keys
+        are unique identifiers for values, providing efficient lookups, insertions, and deletions.
+
+        Parallel Array (Structure of Arrays): Multiple arrays used together, where each array
+        holds a different attribute of a collection of entities, offering efficient access to specific attributes.
+
+        Static Array: An array with a fixed size defined at the time of creation,
+        which cannot be resized during runtime.
+
+    Linked List: A sequence of elements where each element points to the next.
+
+        Singly Linked List: A linear collection of nodes where each node
+        points to the next node in the sequence.
+
+        Doubly Linked List: A linked list where each node has pointers
+        to both the next and the previous nodes.
+
+        Circular Singly Linked List: A singly linked list where the
+        last node points back to the first node, forming a circle.
+
+        Circular Doubly Linked List: A doubly linked list where the last node points b
+        ack to the first node, and the first node points to the last node.
+
+        Multi-Level Linked List: A linked list where each node may have additional
+        pointers to other linked lists, creating a hierarchical structure.
+
+        Skip List: A linked list with multiple levels, where higher levels allow
+        faster traversal by "skipping" over nodes.
+
+        Unrolled Linked List: A linked list where each node contains an array of elements,
+        reducing the memory overhead and increasing cache performance.
+
+        Self-Adjusting List (e.g., Move-to-Front List): A linked list that adjusts its
+        structure based on access patterns, bringing frequently accessed nodes closer to the front.
+
+        Hybrid Linked List: A combination of different types of linked lists,
+        often used to take advantage of the strengths of each type.
+
+        Free List: A linked list used to manage free memory blocks,
+        often used in memory allocation algorithms.
+
+        Polynomial Linked List: A linked list where each node represents
+        a term of a polynomial, used in polynomial arithmetic operations.
+
+    Stack: A collection of elements that follows the Last In, First Out (LIFO) principle.
+        Stack (Basic Stack): A collection of elements that follows the Last In, First Out (LIFO) principle.
+
+        Array-Based Stack: A stack implemented using an array. It has a fixed size,
+        which can be a limitation when the number of elements exceeds the array's capacity.
+
+        Linked List-Based Stack: A stack implemented using a linked list.
+        It can dynamically grow and shrink as elements are added or removed.
+
+        Dynamic Stack: A stack that can grow and shrink dynamically by
+        reallocating memory as needed, similar to a linked list-based stack.
+
+        Persistent Stack: A stack that maintains its previous versions and
+        allows access to any of these versions.
+
+        Double-Ended Stack (Deque as Stack): A stack where elements can be added or removed from both ends.
+
+        Concurrent Stack: A stack designed for concurrent access,
+        allowing multiple threads to safely push and pop elements.
+
+        Capacity-Restricted Stack: A stack with a predefined capacity,
+        which prevents further pushing of elements when it reaches its limit.
+
+        Min-Stack: A stack that, along with the basic stack operations,
+        supports retrieving the minimum element in constant time.
+
+        Multistack (Multilevel Stack): A single data structure that contains multiple stacks,
+        useful for managing different contexts or operations.
+
+    Queue: A collection of elements that follows the First In, First Out (FIFO) principle.
+
+        Queue (Basic Queue): A collection of elements that follows the First In, First Out (FIFO) principle.
+
+        Priority Queue: A type of queue where each element is associated with a priority,
+        and elements are dequeued based on their priority.
+
+        Circular Queue: A linear data structure that connects the last position back
+        to the first position to make a circle, enhancing efficient memory utilization.
+
+        Deque (Double-ended Queue): A queue that allows elements to be added or removed
+        from both ends, offering more flexibility.
+
+        Blocking Queue: A type of queue that supports operations that wait for the queue
+        to become non-empty when retrieving an element and wait for space to become available when storing an element.
+
+        Double-ended Priority Queue: A combination of priority queue and deque,
+        where elements have priorities and can be added or removed from both ends.
+
+        Concurrent Queue: A queue designed for concurrent access,
+        allowing multiple threads to safely enqueue and dequeue elements.
+
+        Drop-out Queue: A special kind of queue that, when it becomes full,
+        drops out the oldest elements to make room for new ones.
+
+        Circular Buffer: Similar to a circular queue, it is used for buffering
+        data streams and can efficiently use a fixed-size buffer.
+
+Hierarchical Data Structures
+    Tree: A collection of nodes where each node has a parent and child nodes.
+
+        Binary Tree: A tree where each node has at most two children,
+        referred to as the left child and the right child.
+
+        Binary Search Tree (BST): A binary tree where for each node,
+        the left child's value is less than the node's value, and the right child's value is greater.
+
+        AVL Tree: A self-balancing binary search tree where the difference
+        in heights of left and right subtrees for any node is no more than one.
+
+        Red-Black Tree: A self-balancing binary search tree with additional properties
+        that enforce balance through coloring of nodes.
+
+        B-Tree: A self-balancing search tree in which nodes can have multiple children,
+        designed for systems that read and write large blocks of data.
+
+        B+ Tree: An extension of B-tree where internal nodes only store keys
+        and leaf nodes store values, often used in databases and file systems.
+
+        Segment Tree: A tree used for storing intervals or segments and efficiently
+        answering range queries.
+
+        Fenwick Tree (Binary Indexed Tree): A data structure used for efficiently
+        updating elements and querying prefix sums.
+
+        Trie (Prefix Tree): A tree-like data structure used for storing
+        associative data structures, mainly for strings.
+
+        Suffix Tree: A compressed trie containing all the suffixes of a given text,
+        used for fast pattern matching.
+
+        Heap: A specialized tree-based structure that satisfies the heap property (min-heap or max-heap).
+
+        Interval Tree: A tree structure for holding intervals, allowing for efficient
+        querying of all intervals that overlap with any given interval.
+
+        KD-Tree (K-Dimensional Tree): A space-partitioning data structure
+        for organizing points in a k-dimensional space, used in searches
+        involving multidimensional search keys.
+
+        Quad Tree: A tree in which each internal node has exactly four children,
+        used to partition a two-dimensional space by recursively subdividing it into four quadrants.
+
+        Octree: A tree in which each internal node has exactly eight children,
+        used to partition a three-dimensional space.
+
+        Ternary Search Tree: A type of trie where nodes are arranged
+        in a manner similar to binary search trees.
+
+    Heap: A specialized tree-based structure that satisfies the heap property (min-heap or max-heap).
+
+Graph-Based Data Structures
+    Graph: A collection of nodes (vertices) connected by edges.
+
+        Directed Graph: Edges have a direction.
+
+        Undirected Graph: Edges have no direction.
+
+        Weighted Graph: Edges have weights or costs.
+
+        Unweighted Graph: Edges have no weights or costs.
+
+        DAG (Directed Acyclic Graph): A directed graph with no cycles.
+
+    Adjacency Matrix: A 2D array used to represent a graph, where each cell (i, j)
+    indicates the presence or absence of an edge between vertices i and j.
+
+    Adjacency List: A collection of lists or arrays where each list or array represents
+    a node and contains a list of its neighboring nodes.
+
+    Incidence Matrix: A 2D array where rows represent vertices and columns
+    represent edges, with entries indicating which vertices are incident to which edges.
+
+    Edge List: A list of all edges in the graph, where each edge is
+    represented by a pair (or tuple) of vertices.
+
+    Compressed Sparse Row (CSR) Matrix: A memory-efficient data structure
+    for storing sparse graphs, where only non-zero elements are stored in a compact format.
+
+    Compressed Sparse Column (CSC) Matrix: Similar to CSR, but columns
+    are stored in a compressed format for efficient traversal.
+
+    Adjacency Multilist: A variation of the adjacency list that allows
+    for multiple edges between nodes, storing additional information about each edge.
+
+    Implicit Graph: A graph where edges are represented by a rule or
+    a function rather than explicitly listing them.
+
+    Dynamic Graph: A graph that can change over time, with support for adding
+    and removing nodes and edges efficiently.
+
+    Planar Graph: A graph that can be embedded in the plane without any edges crossing.
+
+    Bipartite Graph: A graph where vertices can be divided into two disjoint sets
+    such that no two vertices within the same set are adjacent.
+
+    Complete Graph: A graph where every pair of distinct vertices
+    is connected by a unique edge.
+
+    Subgraph: A graph formed from a subset of the vertices and edges
+    of another graph.
+
+Hash-Based Data Structures
+    Hash Table: A collection of key-value pairs, implemented using
+    a hash function to compute an index into an array of buckets or slots,
+    from which the desired value can be found.
+
+    Hash Map: Similar to a hash table, it is a data structure that provides
+    fast access to values based on their keys, typically allowing efficient insertions,
+    deletions, and lookups.
+
+    Hash Set: A set data structure that uses a hash table to ensure
+    unique elements and allow efficient lookups, insertions, and deletions.
+
+    Perfect Hashing: A type of hashing where a hash function is chosen
+    such that no collisions occur, typically used for static sets of keys.
+
+    Dynamic Perfect Hashing: An extension of perfect hashing that allows
+    for dynamic insertions and deletions while maintaining the no-collision property.
+
+    Cuckoo Hashing: A collision resolution method in hash tables that uses
+    two or more hash functions to place an element, moving other elements if a collision occurs.
+
+    Hopscotch Hashing: A hashing technique that deals with collisions
+    by hopping elements within a fixed distance to maintain locality.
+
+    Robin Hood Hashing: A variation of open addressing where elements
+    with longer probe sequences are moved closer to their target positions
+    to balance the probe sequence lengths.
+
+    Open Addressing: A collision resolution strategy in hash tables where
+    all elements are stored in the array itself, and collisions are resolved by probing.
+
+    Linear Probing: A type of open addressing where, upon a collision,
+    the next sequential slot is checked until an empty slot is found.
+
+    Quadratic Probing: A type of open addressing where the interval
+    between probes increases quadratically.
+
+    Double Hashing: A type of open addressing where a second hash function
+    determines the interval between probes.
+
+    Chaining (Separate Chaining): A collision resolution strategy
+    where each bucket contains a linked list or another structure to handle collisions.
+
+Other Data Structures
+    Trie: A tree-like data structure used for efficient retrieval of a key in a dataset of strings.
+
+    Segment Tree: A tree used for storing intervals or segments and efficiently answering range queries.
+
+    Fenwick Tree (Binary Indexed Tree): A tree used for efficiently updating elements and querying prefix sums.
