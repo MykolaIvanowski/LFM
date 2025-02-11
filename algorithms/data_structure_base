@@ -1,0 +1,52 @@
+Linear Data Structures
+    Array: A collection of elements identified by index or key.
+
+    Linked List: A sequence of elements where each element points to the next.
+
+        Singly Linked List: Elements point to the next element only.
+
+        Doubly Linked List: Elements point to both the next and previous elements.
+
+    Stack: A collection of elements that follows the Last In, First Out (LIFO) principle.
+
+    Queue: A collection of elements that follows the First In, First Out (FIFO) principle.
+
+        Priority Queue: Elements are dequeued based on priority.
+
+        Deque (Double-ended Queue): Elements can be added or removed from both ends.
+
+Hierarchical Data Structures
+    Tree: A collection of nodes where each node has a parent and child nodes.
+
+    Binary Tree: Each node has at most two children.
+
+    Binary Search Tree (BST): A binary tree with the left child less than the parent and the right child greater.
+
+    AVL Tree: A self-balancing binary search tree.
+
+    Red-Black Tree: A balanced binary search tree with additional properties for balancing.
+
+    B-Tree: A generalization of a binary search tree for databases.
+
+    Heap: A specialized tree-based structure that satisfies the heap property (min-heap or max-heap).
+
+    Trie: A tree-like data structure used for efficient retrieval of a key in a dataset of strings.
+
+Graph-Based Data Structures
+    Graph: A collection of nodes (vertices) connected by edges.
+
+    Directed Graph: Edges have a direction.
+
+    Undirected Graph: Edges have no direction.
+
+    Weighted Graph: Edges have weights or costs.
+
+    Unweighted Graph: Edges have no weights or costs.
+
+    DAG (Directed Acyclic Graph): A directed graph with no cycles.
+
+Hash-Based Data Structures
+    Hash Table: A collection of key-value pairs, implemented using a hash function.
+
+    Hash Set: A set that uses a hash table for efficient lookups.
+
