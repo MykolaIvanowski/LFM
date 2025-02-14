@@ -14,3 +14,14 @@ class Solution:
             else:
                 right -= 1
         return result
+
+
+# Initialize two pointers: left at the beginning and right at the end of the list.
+#
+# Use a while loop to iterate until the left pointer meets the right pointer.
+#
+# Calculate the area between the lines pointed by left and right,
+# updating the maximum area found.
+#
+# Move the pointer that points to the shorter line towards the center
+# to potentially find a larger area.
