@@ -19,3 +19,19 @@ class Solution:
                 res[stack_i] = i- stack_i
             stack.append((t,i))
         return res
+
+# This algorithm efficiently calculates the number of
+# days to wait for a warmer temperature by using a stack to keep track of
+# indices of temperatures and updating the result array accordingly.
+
+
+# Summary
+# For each day, if the temperature is greater than the last recorded
+# temperature in the stack, we pop from the stack, calculate the difference in days,
+# and update the result array.
+#
+# If the temperature is not greater, we push the current temperature
+# and its index onto the stack.
+#
+# This process continues until all temperatures are processed,
+# giving us the required result array.
