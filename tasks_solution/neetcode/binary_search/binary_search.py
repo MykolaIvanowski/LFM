@@ -11,6 +11,9 @@ class Solution:
 
             middle_pointer = (left_pointer + right_pointer) // 2
 
+            # next line not lead to overflow in case number 2^32
+            # middle_pointer = left_pointer + ((left_pointer-right_pointer)//2)
+
             # if target less than number in array, then update right pointer
             if nums[middle_pointer] > target:
                 right_pointer = middle_pointer - 1
