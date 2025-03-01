@@ -8,18 +8,24 @@ class Solution:
         while left <= right:
             middle = (left+ right)//2
             if target==nums[middle]:
-                return middle
+                return middle  # Return the index if the target is found
 
-            if nums[left]<=nums[right]:
-                if target>nums[middle] or  target<nums[left]:
-                    left= middle+1
+            # check if subarray is sorted
+            if nums[left] <= nums[right]:
+                if target > nums[middle] or  target < nums[left]:
+                    left = middle+1
                 else:
                     right=middle-1
 
+            # subarray is rotated
             else:
-                if target< target[middle] or target>nums[right]:
+                # when target less than middle or grater right value
+                # then move right pointer to middle
+                if target < nums[middle] or target > nums[right]:
                     right = middle-1
                 else:
+                # when target  more than middle or less then left
+                # then move left pointer to middle
                     left = middle+1
 
         return -1
