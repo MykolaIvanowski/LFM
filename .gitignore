@@ -1,2 +1,4 @@
 .idea
 .venv
+base/__pycache__/__init__.cpython-312.pyc
+base/__pycache__/passed_list_as_paraam.cpython-312.pyc
