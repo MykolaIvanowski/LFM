@@ -1,0 +1,575 @@
+[33mcommit 3b11050996817b3bff9022958e2430f96d041ac8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Mar 17 23:47:06 2025 +0000
+
+    neet: find the duplicate number [linkedList]
+
+[33mcommit 8d4c8066129f1a1e5a96d8ce537b2bf0ad09ffab[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Mar 16 20:58:00 2025 +0000
+
+    neet: add two numbers; some explanatiions [linkedList]
+
+[33mcommit 9f38d9bfa136db7ddb929b4532bf9103c2fd18e5[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sat Mar 15 23:43:56 2025 +0000
+
+    neet: copy list with random node [linkedList]
+
+[33mcommit 5f6054c11499d5f48287297d837133b53e8dae4a[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Mar 14 23:53:53 2025 +0000
+
+    neet: remove nth node from end of the list [linkedList]
+
+[33mcommit 7b6c999c837ec26319206e55c2fd08d9745e2652[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Mar 13 22:36:40 2025 +0000
+
+    neet: reorder list [linkedList]
+
+[33mcommit 5c2e9d477ac7cd5a44ef4f13994fc06199dd0ce7[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Mar 12 22:34:26 2025 +0000
+
+    neet: linked list cycle [linkedList]
+
+[33mcommit c75f31bd55d253c2100e0563827634804a42bb7f[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Mar 12 16:13:35 2025 +0000
+
+    neet: merge two sorted linkedlist, explanation, recursive version [linkedList]
+
+[33mcommit 894cf34464b9b6725f0322163b6b48b22c76e411[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Mar 11 23:41:02 2025 +0000
+
+    neet: merge two sorted linkedlist [linkedList]
+
+[33mcommit 5016d2bddf68b4705d6dc90934154ac9de468577[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Mar 10 13:51:57 2025 +0000
+
+    neet: reverse linked list, recursive version [linkedList]
+
+[33mcommit e3a3effa13862ff11f234ca93deb0edb9aece914[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Mar 9 23:50:54 2025 +0000
+
+    neet: reverse linked list [linkedList]
+
+[33mcommit 291a654c2bd36689b46257aebf973d7aed3337ca[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sat Mar 8 22:45:39 2025 +0000
+
+    neet sliding window maximun [sliding window]
+
+[33mcommit 436b59492a07a4c2a0b70c1ba475ef48b3a42216[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sat Mar 8 18:04:56 2025 +0000
+
+    neet minimum window substring explanation [sliding window]
+
+[33mcommit 4a41e5f2e192e4c086875b9af0bea3209d145a56[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Mar 7 22:50:40 2025 +0000
+
+    neet minimum window substring [sliding window]
+
+[33mcommit 837311ec7d51825bba7aecfee85dcca76a294f91[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Mar 6 21:48:16 2025 +0000
+
+    neet permutation in string [sliding window]
+
+[33mcommit d3d166aa58e669b4d9740efa3cb97a56fe94584d[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Mar 5 19:27:39 2025 +0000
+
+    neet longest  repeating characters replacement [sliding window]
+
+[33mcommit ed12baddc183d7318cbb828411f75f200415f35a[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Mar 5 14:43:37 2025 +0000
+
+    neet longest substring without repeating characters [sliding window]
+
+[33mcommit ecfc077b2286864f089bac42d2dbfcd9c92a1e18[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Mar 5 00:02:08 2025 +0000
+
+    neet best time to buy and sell stcok [sliding window]
+
+[33mcommit acba1dfc6ed0a5ab7b989d96e8c1b1a3b8dfc1d3[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Mar 4 21:14:11 2025 +0000
+
+    neet median of two arrays [binary search]
+
+[33mcommit 451c370132207a58f6c079e0cf048965cf0d6e9b[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Mar 2 23:29:09 2025 +0000
+
+    neet time based key value store  [binary search]
+
+[33mcommit 3160bc5f509362c1904800b8e4c9f05815cf052f[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sat Mar 1 23:34:03 2025 +0000
+
+    neet comments  [binary search]
+
+[33mcommit b20f587dfee0998a674841b718e87f7c96000c09[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Feb 28 23:45:11 2025 +0000
+
+    neet search in rotated sorted array [binary search]
+
+[33mcommit 096dba97458273ae622e7b4aed9c8743f93ccb25[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Feb 26 23:59:27 2025 +0000
+
+    neet find minimum in rotated array [binary search]
+
+[33mcommit f5697b92987dfdfb7593613a5cccf3779497a343[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Feb 25 20:10:39 2025 +0000
+
+    neet koko eating bananas [binary search]
+
+[33mcommit d0e690597eeee90c0ad70add1c7df19449ca1b1b[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Feb 25 00:00:09 2025 +0000
+
+    neet search 2d matrix [binary search]
+
+[33mcommit b1c99c4ee481317c0d0aa7847e7c90f5ec125ae7[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Feb 24 14:46:26 2025 +0000
+
+    neet binary search [binary search]
+
+[33mcommit a9e481b88fbe4f7294d4af90b395c2a8183dfa00[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Feb 23 23:47:37 2025 +0000
+
+    neet largest rectangle in  histogram [stack]
+
+[33mcommit d7cebd4af99eff32ea1007b1ee033efda558bef3[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Feb 23 17:12:14 2025 +0000
+
+    neet explanations car fleet [stack]
+
+[33mcommit f65a904f4f6b62e1a04e00cc3f3721498aef412a[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Feb 21 23:47:05 2025 +0000
+
+    neet explanations [stack]
+
+[33mcommit 416ced91e5c995b5dc84e4fe604fb3ddc9417e0a[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Feb 21 19:52:26 2025 +0000
+
+    neet explanations [stack]
+
+[33mcommit f1261abcf675cc681ee124297a559b9e4e49eeb9[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Feb 21 00:01:56 2025 +0000
+
+    neet car fleets [stack]
+
+[33mcommit 153e1e75a4fad73452d4e012f1c42c8048786b63[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Feb 19 23:55:37 2025 +0000
+
+    neet teperature [stack]
+
+[33mcommit d02d5f5135956d7a9e04ccb360e92480b1ffd611[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Feb 18 23:46:36 2025 +0000
+
+    neet generate parentheses [stack]
+
+[33mcommit ddf06b017020c0edb11113b5e694d3c19249022a[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Feb 17 23:42:19 2025 +0000
+
+    neet evaluete reversed polish notation [stack]
+
+[33mcommit 099e08cdf74c65ab38f2817df9f491aca755e611[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Feb 16 23:48:55 2025 +0000
+
+    neet minstack, valid parentheses [stack]
+
+[33mcommit 5c0a7d6840fd2b8c2217d8ae9a8a4c8e5a43284d[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Feb 14 23:47:51 2025 +0000
+
+    neet traping raine water [2 pointers]
+
+[33mcommit 3535a35c7ee1928319f454d31e2d9948921070d9[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Feb 13 23:57:49 2025 +0000
+
+    neet conteiners with most water [2 pointers]
+
+[33mcommit 461f68e5ff3c82c304202985122649e83993c089[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Feb 12 22:58:38 2025 +0000
+
+    neet 3 sum [2 pointers]
+
+[33mcommit 7c8c6e6d1f0c45b141d322558952463db12b85ad[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Feb 12 18:03:23 2025 +0000
+
+    neet valid palindrom [2 pointers]
+
+[33mcommit e5c887a1326bc4afce000d9e9717bce72038ea67[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Feb 11 23:52:11 2025 +0000
+
+    data structure
+
+[33mcommit 136f78c1062b025d3dbccdb6ad2cb636a8d16609[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Feb 10 23:42:24 2025 +0000
+
+    neet two sum 2 [2 pointers]
+
+[33mcommit f38c329295ebdab56928e0c6fbc8c27281e4931c[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Feb 10 23:41:54 2025 +0000
+
+    neet two sum 2 [2 pointers]
+
+[33mcommit 954a98d1911f9aea5f66723e62ddc4d0d38df6cf[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Feb 9 00:02:41 2025 +0000
+
+    neet longest consecutive sequence [array]
+
+[33mcommit ce98b7f593416d1e80d7c06bacd533ffcfa050ca[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Feb 9 00:00:03 2025 +0000
+
+    neet longest [array]
+
+[33mcommit 6d41298f1b6cee126005c981057fd60e1bebc3df[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Feb 5 23:56:47 2025 +0000
+
+    neet valid sudoku [array]
+
+[33mcommit 41707eddc803209823a2e3204c0282a213986232[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Feb 4 19:51:05 2025 +0000
+
+    neet product of array [array]
+
+[33mcommit 034fb9ca6e68359d9a958560172d521dfd3cc9dd[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Feb 3 23:17:49 2025 +0000
+
+    neet encoding decoding [array]
+
+[33mcommit fd0c1142649270d3a532479d2bf04b1bc81542b4[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Feb 3 23:14:17 2025 +0000
+
+    neet encoding decoding [array]
+
+[33mcommit 94dd4873df9cd3a0424866411e560cd78c1a8b9f[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sat Feb 1 00:01:09 2025 +0000
+
+    neet top k frequent nums [array]
+
+[33mcommit 043e727fca19c858ca90844dd3d5afd36a450ad9[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Jan 29 23:53:49 2025 +0000
+
+    neet group anagram [array]
+
+[33mcommit 61a610594af4af5d51e702f89aee03b365b394ff[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Jan 28 23:44:29 2025 +0000
+
+    neet duplicate [array]
+
+[33mcommit 84551a5573a1acd8a92056a34ead36ee43399911[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Jan 27 23:14:12 2025 +0000
+
+    neet anagram [array]
+
+[33mcommit e78034ab4efe55c6a00603ed92f115c55e1e8253[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Jan 23 23:47:48 2025 +0000
+
+    neet twosum [array]
+
+[33mcommit 8782983b73480e73774f3331c93a5e220bbacd69[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Jan 15 21:26:39 2025 +0000
+
+    sql t2 p3
+
+[33mcommit ee3e727615ec4fab7e44199c8f860009a2db158d[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Jan 14 23:25:40 2025 +0000
+
+    sql t2 p3
+
+[33mcommit 3657e49d8875ef60401b6c28fbed58d6bf2546cf[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Jan 10 21:09:35 2025 +0000
+
+    sql t2 p3
+
+[33mcommit 328891da5727e294bf9bae2994ff90c140feee9e[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Jan 9 21:26:01 2025 +0000
+
+    sql t2 p2
+
+[33mcommit fe9392c40506b0b8145af3b8df3e6f443e96b0dc[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Jan 8 19:35:28 2025 +0000
+
+    sql t2 p1
+
+[33mcommit c6a3e894af01d63b307027eba20ef12d395fa04f[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Jan 6 20:25:28 2025 +0000
+
+    sql t2
+
+[33mcommit 00ebfe8faa05d5cc5cf43cb283781f31dda2f819[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sat Jan 4 00:28:45 2025 +0000
+
+    sql 8w t1bonus
+
+[33mcommit bd9b7295dfa1e454c91cd45fa15f3354cd2cb062[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Jan 3 23:49:32 2025 +0000
+
+    sql 8w t1bonus
+
+[33mcommit 402e686906df5db67d89abd508d3f1af9d51f9a8[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Jan 2 23:53:18 2025 +0000
+
+    sql 8weeks 1tq10
+
+[33mcommit 9e02cd9249b15bfab91a9edd0dfc96217cb9c7a7[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Jan 1 20:10:38 2025 +0000
+
+    sql 8weeks 2t
+
+[33mcommit 2eabd86a30258483b0f310edd0971277cf669209[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Dec 30 23:31:14 2024 +0000
+
+    sql 8weeks 1t
+
+[33mcommit 080dc111f304f11da06d79714dee61a2f4cca66e[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Dec 29 23:56:39 2024 +0000
+
+    sql
+
+[33mcommit 2552a5e3dfbf8c0e2301a53e5acfb4de8be99aa3[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Dec 26 17:22:31 2024 +0000
+
+    sql 1934,2356,3220
+
+[33mcommit 3b226adcd684f658b4ff8f032d0883704056fff0[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Dec 24 23:31:29 2024 +0000
+
+    sql 1890,1795,1789,1965,1978,1907,1873
+
+[33mcommit f1d8a690006c952a2d5993fb3f1530f80d072349[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Dec 23 11:44:20 2024 +0000
+
+    sql 1587,1581,1693,1729,1741,1667,1683,1633,1757,1731
+
+[33mcommit 66456a904e867617ce362d92d9e289e1d4027a31[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sat Dec 21 00:29:22 2024 +0000
+
+    sql 1517,1527
+
+[33mcommit 1e32bf1d95024770ad907363368519e7e9047e76[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Dec 19 15:19:05 2024 +0000
+
+    sql 1407,1378,1484,1393
+
+[33mcommit 3e71f2b4fbeacdeee49b6a133c9bed8b8340245b[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Dec 17 23:46:06 2024 +0000
+
+    sql 1341
+
+[33mcommit 8f1d5b7d167313afd30663653ec966600fa2650d[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Dec 17 00:16:04 2024 +0000
+
+    sql 1327,1321
+
+[33mcommit 5f07d68d19023c52bc95d8c803ed48ea7c6eec94[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Dec 11 17:41:08 2024 +0000
+
+    sql 1251,1280
+
+[33mcommit 2891c0679e00e4e126210130feb70b1f98cbcf28[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Dec 11 00:19:34 2024 +0000
+
+    sql 1211
+
+[33mcommit d9262766db80874bec75d4c6474cc5c9dff47636[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Dec 9 23:13:03 2024 +0000
+
+    1179, 1193, 1204
+
+[33mcommit 7d83aec65860bd8241ca875d90093a032dfb4a32[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sat Dec 7 23:53:55 2024 +0000
+
+    1174
+
+[33mcommit 13e67230b25dd64f398a89db18d2b0c97722c03d[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Nov 27 18:19:50 2024 +0000
+
+    some sql
+
+[33mcommit b990a8c13a187ae53e2af2c25eb7978bce5ac9bc[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Nov 26 23:40:50 2024 +0000
+
+    easy
+
+[33mcommit f447bbdbf147b8cbfed82a61224c28b6869846b0[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Mon Nov 25 23:10:05 2024 +0000
+
+    leet 3 sol
+
+[33mcommit b6b8e4167c088f03684f5050e77cd8527e55e366[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sun Nov 24 23:23:56 2024 +0000
+
+    leet sql 618
+
+[33mcommit 4a1ba7df54518c494189632d36048616ca308c8b[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Nov 7 20:29:08 2024 +0000
+
+    leet sql
+
+[33mcommit f27d60f5443c13eb66e5389697e2916c18e04790[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Wed Nov 6 23:51:10 2024 +0000
+
+    sql Leet
+
+[33mcommit f7e2139e0c6645a65a98f8c52394d5bf0294cea4[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Tue Nov 5 19:26:03 2024 +0000
+
+    sql Leet
+
+[33mcommit 87b57ba6723f54865ebe7797e573a1382394ffa5[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Sat Nov 2 23:02:42 2024 +0000
+
+    leet 585
+
+[33mcommit 7ac87c73a3b06333d1c22cd0cad1f2e27c758740[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Fri Nov 1 22:44:46 2024 +0000
+
+    leet 4 sql
+
+[33mcommit 0a16a95a859b576fdcb5a04e63dd3c1f8516934d[m
+Author: mykola <mykolaivanowski@gmail.com>
+Date:   Thu Oct 31 22:35:09 2024 +0000
+
+    generic and sql leet
+
+[33mcommit 105e26c57c8385c759c3740e9996f556cce6aed9[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Sat Mar 9 16:55:06 2024 +0200
+
+    104
+
+[33mcommit ee96df54023758ee981097519667aa8e27b8a53c[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Wed Mar 6 20:36:21 2024 +0200
+
+    138
+
+[33mcommit 9256b85c4428cccfda86c80cfee7f59db42790b7[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Wed Mar 6 01:08:19 2024 +0200
+
+    205
+
+[33mcommit 707b22ca76871355648aa4a15dd3a5c38b22b76a[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Sat Mar 2 16:41:52 2024 +0200
+
+    100
+
+[33mcommit 62970525bcee399f8416f62aca28e04d828f67b9[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Tue Feb 27 18:13:42 2024 +0200
+
+    46
+
+[33mcommit ba4b0cd007d5514a649076327c2cbf059fcfe441[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Sat Feb 24 01:03:31 2024 +0200
+
+    88
+
+[33mcommit f18ada1fd877d09e4f6e9e28fb570ddf143282a0[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Wed Feb 21 19:25:56 2024 +0200
+
+    83
+
+[33mcommit 563b2b57e34c30b293e65d367194006e999000fd[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Tue Feb 20 22:18:27 2024 +0200
+
+    28
+
+[33mcommit 0f5828dc837141cbc5297034d6f88161caa0741d[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Sat Feb 17 23:53:00 2024 +0200
+
+    268
+
+[33mcommit 16385d3e0feabad4ac0199178ac3a70890c7429f[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Mon Dec 11 23:26:38 2023 +0200
+
+    with
+
+[33mcommit 72f422a38c00d5926c6071d2aa5ad8e89ee06b64[m
+Author: mykola <mykolaivanowski@mail.com>
+Date:   Thu Dec 7 19:18:31 2023 +0200
+
+    leet esey
