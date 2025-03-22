@@ -10,7 +10,7 @@
 #  b- 2   7
 #         /\
 #      d- 6 9 - a
-from typing import Optional, no_type_check_decorator
+from typing import Optional
 
 
 class TreeNode:
