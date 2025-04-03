@@ -11,7 +11,6 @@
 #  |ab - ac| <= 1 (True)    |ab-ac| <=1 (False)
 #  it is balanced           it is not balanced
 # node(subtrees) in balanced tree (left and right) should not have  differ in height more then 1
-from lib2to3.fixes.fix_asserts import FixAsserts
 from typing import Optional
 
 
