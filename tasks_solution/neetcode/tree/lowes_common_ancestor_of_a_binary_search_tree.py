@@ -1,5 +1,5 @@
 # given binary tree where all nodes are unique, given two nodes p,q
-# find lowest parent (ancestor) for this nodes p and q ,
+# find lowes parent (ancestor) for this nodes p and q ,
 #
 # Input: root = [5,3,8,1,4,7,9,null,2], p = 3, q = 8
 # Output: 5
@@ -51,3 +51,19 @@ t4 = TreeNode(4,t2,t7)
 obj = Solution()
 r = obj.lowes_common_ancestor(t4,t6,t9)
 print(r.val)
+
+
+class SolutionIteration:
+    def lowes_common_ancestor(self, root: TreeNode, p: TreeNode, q: TreeNode):
+        current  = root
+
+        while current:
+            # if p,q range grater than root go to right leaf
+            if p.val > current.val and q.val > current.val:
+                current = current.right
+            # if q,p range lower than root go to left
+            elif p.val < current.val and q.val < root.val:
+                current = current.left
+            # if root value is between range p q then it is a lower common ancestor
+            else:
+                return current
