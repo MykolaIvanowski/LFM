@@ -80,15 +80,24 @@ class SolutionBFS:
         root = TreeNode(int(values[0]))# create root node
         queue = deque([root])
         i = 1
+
+        # we iterate until queue is not empty,
+        # but real date store in arrays and we iterate on it separately
         while queue:
             node = queue.popleft()
 
+            # start from the left node because we add in queue left node first
             if values[i] != 'Nan':
+                # if in values not  Nan that means we have node
+                # create node
                 node.left = TreeNode(int(values[i]))
+                # add left node first to the queue
                 queue.append(node.left)
-            i+=1
+            i+=1 # count iterate,
             if values[i] != 'Nan':
+                # add node to left subtrees
                 node.right = TreeNode(int(values[i]))
+                # add second time node to right subtree
                 queue.append(node.right)
             i+=1
         return root
