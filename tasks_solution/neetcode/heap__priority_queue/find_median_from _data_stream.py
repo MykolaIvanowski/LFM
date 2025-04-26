@@ -53,7 +53,6 @@ class Solution:
             value = heapq.heappop(self.max_heap)
             heapq.heappush(self.min_heap, -1 * value)
 
-
     def find_median(self)-> float:
         #return first value in min heap because min heap larger, it have median number
         if len(self.min_heap) > len(self.max_heap):
