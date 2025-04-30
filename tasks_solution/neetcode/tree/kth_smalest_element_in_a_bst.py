@@ -32,12 +32,12 @@ class SolutionDFSRecursive:
         index_representation = k
         result = root.val
 
-        def depth_for_search(node):
+        def depth_first_search(node):
             nonlocal index_representation,result  # use nonlocal to have the same variable in any dfs recursive call
             if not node:
                 return
 
-            depth_for_search(node.left)
+            depth_first_search(node.left)
             # this line plays crucial role in finding k-th element
             # it will -1 to variable every time when you move to next index (array representation of bst)
             index_representation -= 1
@@ -49,9 +49,9 @@ class SolutionDFSRecursive:
                 return
             # why it is work for right tree, because we still have left nodes as None
             # and it count -1 when nodes are None
-            depth_for_search(node.right)
+            depth_first_search(node.right)
 
-        depth_for_search(root)
+        depth_first_search(root)
 
         return result
 

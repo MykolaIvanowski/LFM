@@ -26,7 +26,7 @@ class Solution:
     def level_order(self, root : Optional[TreeNode])->List[List[int]]:
         result = []
 
-        def depth_for_search(node, depth):
+        def depth_first_search(node, depth):
             if not node: # empty root or finished level
                return None
             if len(result) == depth: # add level in matrix only 1 per level
@@ -38,10 +38,10 @@ class Solution:
             result[depth].append(node.val)
 
             # when we go deper add +1 for depth (to check correct level in  len(m) == depth)
-            depth_for_search(node.left, depth+1)
-            depth_for_search(node.right, depth+1)
+            depth_first_search(node.left, depth+1)
+            depth_first_search(node.right, depth+1)
 
-        depth_for_search(root,0) # entry point
+        depth_first_search(root,0) # entry point
         return result
 
 t7 = TreeNode(7)
@@ -58,7 +58,7 @@ print(r)
 
 
 class SolutionBFS:
-    def breath_for_search(self, root : Optional[TreeNode])-> List[List[int]]:
+    def breath_first_search(self, root : Optional[TreeNode])-> List[List[int]]:
         result = []
         queue = deque()
         queue.append(root)
@@ -86,5 +86,5 @@ class SolutionBFS:
         return result
 
 obj1 = SolutionBFS()
-r = obj1.breath_for_search(t1)
+r = obj1.breath_first_search(t1)
 print(r)

@@ -20,14 +20,14 @@ class Solution:
     def max_path_sum(self,root:Optional[TreeNode])->int:
         result  = [root.val] # it is global tracker
 
-        def depth_for_search(node):
+        def depth_first_search(node):
             # if node is null return 0
             if not node:
                 return 0
 
             # common dfs
-            left_max=depth_for_search(node.left)
-            right_max=depth_for_search(node.right)
+            left_max=depth_first_search(node.left)
+            right_max=depth_first_search(node.right)
 
             # if recursive method return negative values change it to zero
             left_max=max(left_max,0)
@@ -42,7 +42,7 @@ class Solution:
             # add with current parent node (root node)
             return node.val+max(left_max,right_max)
 
-        depth_for_search(root)
+        depth_first_search(root)
         return result[0]
 
 
