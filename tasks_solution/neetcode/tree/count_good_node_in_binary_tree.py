@@ -24,7 +24,7 @@ class TreeNode:
 class Solution:
     def good_nodes(self, root: TreeNode)-> int:
 
-        def depth_for_search(node, max_val):
+        def depth_first_search(node, max_val):
             if not node:
                 return 0 # return zero if leaf is None
 
@@ -37,11 +37,11 @@ class Solution:
             max_val  = max(max_val,node.val) #
 
             # go to leafs and summ result
-            res += depth_for_search(node.left, max_val)
-            res += depth_for_search(node.right, max_val)
+            res += depth_first_search(node.left, max_val)
+            res += depth_first_search(node.right, max_val)
             return res
 
-        return depth_for_search(root,root.val)
+        return depth_first_search(root,root.val)
 
 
 t33 = TreeNode(3)

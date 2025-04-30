@@ -24,20 +24,20 @@ class Solution:
     def diameter_of_binary_tree(self,root: Optional[TreeNode])-> int:
         res = 0 # use variable to store the result from recursion, mark as non local variable
 
-        def depth_for_search(root):
+        def depth_first_search(root):
             nonlocal res
             if not root :
                 return 0
 
-            left  = depth_for_search(root.left)
-            right  = depth_for_search(root.right)
+            left  = depth_first_search(root.left)
+            right  = depth_first_search(root.right)
             # save result for left, right , res value to global variable
             res = max(res, left+right) # diameter is  left + right
 
             # trick, to count max depht and get from left or right
             return 1 + max(left, right)
 
-        depth_for_search(root)
+        depth_first_search(root)
 
         return res
 

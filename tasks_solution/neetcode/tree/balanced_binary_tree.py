@@ -23,14 +23,14 @@ class TreeNode:
 
 class Solution:
     def is_balanced(self, root : Optional[TreeNode])->bool:
-        def depth_for_search(root):
+        def depth_first_search(root):
             if not root:
                 return [True,0]
             # go recursively first to left leafs then to right trees
-            left, right  = depth_for_search(root.left), depth_for_search(root.right)
+            left, right  = depth_first_search(root.left), depth_first_search(root.right)
 
             # abs function return number without minus,
-            # check if leftand right is true and then
+            # check if left and right is true and then
             # compare if left and right different height is less or equal to 1
             balance = left[0] and right[0] and abs(left[1]-right[1]) <= 1
 
@@ -38,7 +38,7 @@ class Solution:
             # return max height for left or right node
             return [balance, 1 + max(left[1],right[1])]
 
-        return depth_for_search(root)[0]
+        return depth_first_search(root)[0]
 
 
 t6 = TreeNode(6)

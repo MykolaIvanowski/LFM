@@ -63,7 +63,7 @@ class SolutionDFS:
     def right_side_view(self, root: Optional[TreeNode])-> List[int]:
         result  = []
 
-        def depth_for_search(node, depth):
+        def depth_first_search(node, depth):
             if not node:
                 return None  # if node empty return None
 
@@ -74,10 +74,10 @@ class SolutionDFS:
                 result.append(node.val)
 
             # go to left then right leafs
-            depth_for_search(node.right, depth + 1)
-            depth_for_search(node.left, depth + 1)
+            depth_first_search(node.right, depth + 1)
+            depth_first_search(node.left, depth + 1)
 
-        depth_for_search(root,0)
+        depth_first_search(root,0)
         return result
 
 
