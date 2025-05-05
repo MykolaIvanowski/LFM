@@ -1,5 +1,5 @@
-# given array, and prerequisite (it is represent grapth)
-#  if course you wont take a you shuold take b,c
+# given array, and prerequisite (it is represent graph)
+#  if course you wont take a you should take b,c
 # check if courses do not have lock,
 # like if for course a you need course  b for course b you need course a
 # the pair [0,1] must be taken course 1 before course 0
