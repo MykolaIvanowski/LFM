@@ -73,7 +73,7 @@ class SolutionBottomUp:
             # on each step calculation deside calculate it or leave it
             best_option[i] = max(best_option[i-1], nums[i]+ best_option[i-2])
 
-        # retur last element
+        # return last element
         return best_option[-1]
 
 o = SolutionBottomUp()
