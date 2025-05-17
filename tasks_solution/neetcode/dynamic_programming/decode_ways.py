@@ -78,14 +78,15 @@ class SolutionBottomUp:
 obj = SolutionBottomUp()
 r = obj.decode_ways('123456')
 print(r)
-print('----')
+
+
 class SolutionSpaceOptimized:
     def decode_way(self, s: str)-> int:
         #  dp2 number of decoding ways for 2 steps
         #  dp1 = number of decoding ways of one step and it is main result
-        #  dp = it is like current update
-        # use temporary value to store temp result
-        dp = dp2 = 0  # tracking the last two computing values
+        #  dp = it is like current update, - Without it, we wouldn’t be able to correctly store intermediate
+        #  results before updating dp1 and dp2.
+        dp = dp2 = 0
         dp1 = 1
 
         # un loop in reverse order
