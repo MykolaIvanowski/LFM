@@ -18,7 +18,7 @@ class Solution:
     def climb_stairs(self, n: int)-> int:
         second_number, first_number = 1,1
 
-        # as we start from step 1, we only need only (n-1), it is like representation fibonachi sequence
+        # as we start from step 1, we only need (n-1), it is like representation fibonaci sequence
         #  f(n-1) + f(n-2)
         for i in range(n-1):
 
@@ -34,7 +34,7 @@ obj = Solution()
 res = obj.climb_stairs(6)
 print(res)
 
-# solution based on fibonachi sequences
+# solution based on fibonaci sequences
 class SolutionTopDown:
     def climb_stairs(self, n : int)-> int:
         cache = [-1] * n
@@ -46,7 +46,7 @@ class SolutionTopDown:
             if cache[i] != -1:  # check if result is already computed
                 return cache[i]  # if yes return result
 
-            cache[i] = dfs(i+1) + dfs(i+2) # recursevly comput result by fibo formula  f(n-1) + f(n-2)
+            cache[i] = dfs(i+1) + dfs(i+2) # recursively computing result by fibo formula  f(n-1) + f(n-2)
 
             return cache[i] # return i element, during recursion it is from n-1 ->..., 5, 4, 3, 2, 1, 0
 
@@ -66,7 +66,7 @@ class SolutionBottomUp:
         # compute result, start from i = 3
         for i in range(3, n + 1):
 
-            # compute i element based on sum of two previous elements,  index-1, index - 2, thats why we need  [0,1,2]
+            # compute i element based on sum of two previous elements,  index-1, index - 2, that's why we need  [0,1,2]
             array[i] = array[i-1] + array[i - 2]
 
         return array[n] # return n element, the last element
