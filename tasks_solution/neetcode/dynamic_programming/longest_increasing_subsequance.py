@@ -72,9 +72,26 @@ class SolutionBottomUp:
                 if nums[i]< nums[j]:
                     # for current i index we will count increasing larger subsequence (how much numbers it have)
                     # including current value under index i
-                    # we will count every possible increasing
-                    subsequence = max(subsequence[i],1+subsequence[j] )
+                    # so we will count every possible longest increasing subsequence for every i index
+                    subsequence[i] = max(subsequence[i],1+subsequence[j] )# +1 because we wont count i element
+            print(subsequence)
 
+        # just return max result
         return max(subsequence)
 
-
+obj = SolutionBottomUp()
+obj.length_of_subsequence([2,3,5,2,6,1,2,4,8,9])
+#
+# subsequence change after j loop finished
+# given array [2, 3, 5, 2, 6, 1, 2, 4, 8, 9]
+#             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+#             [1, 1, 1, 1, 1, 1, 1, 1, 2, 1]
+#             [1, 1, 1, 1, 1, 1, 1, 3, 2, 1]
+#             [1, 1, 1, 1, 1, 1, 4, 3, 2, 1]
+#             [1, 1, 1, 1, 1, 5, 4, 3, 2, 1]
+#             [1, 1, 1, 1, 3, 5, 4, 3, 2, 1]
+#             [1, 1, 1, 4, 3, 5, 4, 3, 2, 1]
+#             [1, 1, 4, 4, 3, 5, 4, 3, 2, 1]
+#             [1, 5, 4, 4, 3, 5, 4, 3, 2, 1]
+#             [6, 5, 4, 4, 3, 5, 4, 3, 2, 1]
+#
