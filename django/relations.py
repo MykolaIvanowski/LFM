@@ -1,4 +1,4 @@
-# models views, Tamplates
+# models, views, urls, tamplates
 
 #  models used for definding structure of data base
 class Product(model.Model):
@@ -13,6 +13,17 @@ def product_list(request):
     products = Product.object.all()
     return render(requests, 'products.html', {'products': products})
 
+# URLs in Django (Uniform Resource Locators)
+# the are used for map we addrese to specific views
+# Key roles  - routing requests, dynamic url patterns, decoupling logic (separetes url config from views logic)
+
+from django.urls import path
+from . import views
+
+urlspatterns = [
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about')
+]
 
 # Templates - this layer define how data is displayed on html
 
@@ -23,5 +34,6 @@ def product_list(request):
 # conclusion:
 # models - manage data and store
 # views - retrive the data and apply business logic
+# urls - dispatcher connects incomming requests to concrete function or views
 # templates - present data to the user
 # could be changed for - API-driven frontend development
