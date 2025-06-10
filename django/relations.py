@@ -103,3 +103,17 @@ from django.contrib.auth import authenticate, login
 user = authenticate(username='mykola', password='secret')
 if user is not None:
     login(request, user)
+
+# ORM objective relational mapper
+# Django ORM allows  database  interation using Python classes, instead write sql
+
+
+from django.db import models
+
+class Product(models.Models):
+    name = models.CharField(max_length=200)
+    price = models.DecimalField(max_digit=10, decimal_places=2)
+
+### example querying db
+
+products =  Product.objects.filter(price__gt=100) # fetch products with price > 100
