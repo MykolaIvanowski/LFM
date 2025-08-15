@@ -1,0 +1,36 @@
+<!--
+ How CSRF Protection Works
+To prevent this, frameworks like Django use CSRF tokens:
+• 	A unique, unpredictable value is generated per user session.
+• 	This token must be included in POST, PUT, or DELETE requests.
+• 	The server checks that the token matches the one stored in the session.
+-->
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="csrfmiddlewaretoken" value="abc123xyz">
+    <!-- Other form fields -->
+</form>
+
+<!-- django робить цей інпут неявним-->
+<input type="hidden" name="csrfmiddlewaretoken" value="s3cr3tT0k3n123">
+
+
+<!-- Якщо ти надсилаєш форму вручну (наприклад, через JavaScript), тобі потрібно вказати це поле явно.-->
+fetch('/submit/', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  body: `csrfmiddlewaretoken=${csrfToken}&username=Mykola`
+});
+
+<!--
+ So What's the Difference?
+| Term                | Meaning                                                          |
+| CSRF                | The security vulnerability you're trying to prevent              |
+| csrfmiddlewaretoken | The name of the form field that carries the CSRF token in Django |
+-->
+
+
+

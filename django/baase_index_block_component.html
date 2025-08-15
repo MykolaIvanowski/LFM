@@ -1,0 +1,73 @@
+<!-- base page-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Сайт</title>
+</head>
+<body>
+
+    <div id="header">header from base.html</div>
+
+    {% block content %}
+    <div id="default-content">this is default content from base.html</div>
+    {% endblock %}
+
+    <div id="footer">footer from base.html</div>
+
+</body>
+</html>
+
+<!-- Index page-->
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="home-content">content from index.html</div>
+{% endblock %}
+
+<!-- real page render-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Site</title>
+</head>
+<body>
+
+    <div id="header">header from base.html</div>
+
+    <div id="home-content">content from index.html</div>
+
+    <div id="footer">footer from base.html</div>
+
+</body>
+</html>
+
+<!-- block content replacing in chilled page-->
+
+<!-- what if content not in block?-->
+
+<!-- base content -->
+<body>
+    {% block content %}
+    <div id="default-content">content from base.html</div>
+    {% endblock %}
+
+    <div id="footer">footer from base.html</div>
+</body>
+
+<!-- index html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="home-content">content from.html</div>
+    <div id="footer">footer from index.html</div>
+{% endblock %}
+
+<!-- result on page-->
+<body>
+    <div id="home-content">content from  index.html</div>
+    <div id="footer">footer from index.html</div>
+
+    <div id="footer">footer from base.html</div>
+</body>
+
+<!-- result both on page->
